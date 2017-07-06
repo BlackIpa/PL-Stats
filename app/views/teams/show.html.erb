@@ -1,0 +1,37 @@
+<h1><%= @team.team_name %></h1>
+
+<table>
+  <tr>
+    <th>Matches Played</th>
+    <th>Points</th>
+  </tr>
+  <tr>
+    <td><%= @team.games_played %></td>
+    <td><%= @team.points %></td>
+    <td><%= link_to 'Back', teams_path %></td>
+  </tr>
+</table>
+
+<h2>Players</h2>
+
+<table>
+  <tr>
+    <th>Player Name</th>
+    <th>Position</th>
+    <th>Minutes</th>
+    <th>Points</th>
+    <th>Goals</th>
+    <th>Assists</th>
+  </tr>
+ 
+  <% @team.players.each do |player| %>
+    <tr>
+      <td><%= player.full_name %></td>
+      <td><%= player.position %></td>
+      <td><%= player.minutes %></td>
+      <td><%= player.total_points %></td>
+      <td><%= player.goals_scored %></td>
+      <td><%= player.assists %></td>
+    </tr>
+  <% end %>
+</table>
