@@ -23,7 +23,7 @@
     <th>Goals</th>
     <th>Assists</th>
   </tr>
- 
+
   <% @team.players.each do |player| %>
     <tr>
       <td><%= player.full_name %></td>
@@ -32,6 +32,33 @@
       <td><%= player.total_points %></td>
       <td><%= player.goals_scored %></td>
       <td><%= player.assists %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Matches</h2>
+
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Home</th>
+    <th>Away</th>
+    <th>Result</th>
+  </tr>
+
+  <% @team.matches.each do |match| %>
+    <tr>
+      <td><%= match.round %></td>
+
+      <% if match.was_home = "True" %>
+        <td><%= match.team_name %></td>
+        <td><%= match.opp_team_name %></td>
+      <% else %>
+        <td><%= match.opp_team_name %></td>
+        <td><%= match.team_name %></td>
+      <% end %>
+
+      <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
     </tr>
   <% end %>
 </table>

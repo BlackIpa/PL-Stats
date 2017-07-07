@@ -3,6 +3,15 @@ Rails.application.routes.draw do
 
   resources :teams do
   	resources :players
+    resources :matches
+  end
+
+  resources :players do
+    resources :player_matches
+  end
+
+  resources :matches do
+    resources :player_matches
   end
 
   root 'welcome#index'

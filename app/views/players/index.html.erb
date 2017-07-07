@@ -1,0 +1,45 @@
+<h1>All players list</h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Position</th>
+    <th>Number</th>
+    <th>Team</th>
+    <th>Games played</th>
+    <th>Minutes Played</th>
+    <th>Points</th>
+    <th>Bonus Points</th>
+    <th>Pts per Game</th>
+    <th>Goals</th>
+    <th>Assists</th>
+    <th>Passes Success(%)</th>
+    <th>Clean Sheets</th>
+    <th>Yellow Cards</th>
+    <th>Red Cards</th>
+    <th>Own Goals</th>
+    <th>Details</th>
+  </tr>
+
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.full_name %></td>
+      <td><%= player.position %></td>
+      <td><%= player.squad_number %></td>
+      <td><%= player.team_name %></td>
+      <td>Count games with > 0 minutes</td>
+      <td><%= player.minutes %></td>
+      <td><%= player.total_points %></td>
+      <td><%= player.bonus %></td>
+      <td><%= player.points_per_game %></td>
+      <td><%= player.goals_scored %></td>
+      <td><%= player.assists %></td>
+      <td><%= player.passes_success %></td>
+      <td><%= player.clean_sheets %></td>
+      <td><%= player.yellow_cards %></td>
+      <td><%= player.red_cards %></td>
+      <td><%= player.own_goals %></td>
+      <td><%= link_to 'Show', player_path(player) %></td>
+    </tr>
+  <% end %>
+</table>

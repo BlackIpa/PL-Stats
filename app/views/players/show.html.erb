@@ -1,0 +1,77 @@
+<h1><%= @player.full_name %></h1>
+
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Position</th>
+    <th>Number</th>
+    <th>Team</th>
+    <th>Games played</th>
+    <th>Minutes Played</th>
+    <th>Points</th>
+    <th>Bonus Points</th>
+    <th>Pts per Game</th>
+    <th>Goals</th>
+    <th>Assists</th>
+    <th>Passes Success(%)</th>
+    <th>Clean Sheets</th>
+    <th>Yellow Cards</th>
+    <th>Red Cards</th>
+    <th>Own Goals</th>
+  </tr>
+
+  <tr>
+    <td><%= @player.team_name %></td>
+    <td><%= @player.position %></td>
+    <td><%= @player.squad_number %></td>
+    <td><%= @player.team_name %></td>
+    <td>Count games with > 0 minutes</td>
+    <td><%= @player.minutes %></td>
+    <td><%= @player.total_points %></td>
+    <td><%= @player.bonus %></td>
+    <td><%= @player.points_per_game %></td>
+    <td><%= @player.goals_scored %></td>
+    <td><%= @player.assists %></td>
+    <td><%= @player.passes_success %></td>
+    <td><%= @player.clean_sheets %></td>
+    <td><%= @player.yellow_cards %></td>
+    <td><%= @player.red_cards %></td>
+    <td><%= @player.own_goals %></td>
+  </tr>
+</table>
+
+<h2>Matches</h2>
+
+<table>
+  <tr>
+    <th>Kick Off</th>
+    <th>Home</th>
+    <th>Away</th>
+    <th>Result</th>
+    <th>Points</th>
+    <th>Bouns Points</th>
+    <th>Goals</th>
+    <th>Assists</th>
+    <th>Passes Success</th>
+  </tr>
+
+  <% @player.player_matches.each do |player_match| %>
+    <tr>
+      <td><%= player_match.kickoff_time_formatted %></td>
+
+      <% if player_match.was_home = "True" %>
+        <td><%= player_match.team_name %></td>
+        <td><%= player_match.opp_team_name %></td>
+      <% else %>
+        <td><%= player_match.opp_team_name %></td>
+        <td><%= player_match.team_name %></td>
+      <% end %>
+      <td><%= player_match.team_h_score %>:<%= player_match.team_a_score %></td>
+      <td><%= player_match.total_points %></td>
+      <td><%= player_match.bonus %></td>
+      <td><%= player_match.goals_scored %></td>
+      <td><%= player_match.assists %></td>
+      <td><%= player_match.passes_success %></td>
+    </tr>
+  <% end %>
+</table>
