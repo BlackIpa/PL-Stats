@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170704113238) do
     t.string "threat", limit: 45
     t.decimal "influence", precision: 6, scale: 2
     t.decimal "creativity", precision: 6, scale: 2
+    t.string "kick_off", limit: 45
     t.index ["team_id"], name: "team_id"
   end
 

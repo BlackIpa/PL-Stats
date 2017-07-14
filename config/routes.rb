@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :teams do
   	resources :players
     resources :matches
+    collection do
+      get 'team_offensive'
+    end
+    #resources :player_matches
   end
 
   resources :players do

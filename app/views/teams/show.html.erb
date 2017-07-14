@@ -41,6 +41,7 @@
 <table>
   <tr>
     <th>Round</th>
+    <th>Date</th>
     <th>Home</th>
     <th>Away</th>
     <th>Result</th>
@@ -49,8 +50,9 @@
   <% @team.matches.each do |match| %>
     <tr>
       <td><%= match.round %></td>
+      <td><%= match.kick_off %></td>
 
-      <% if match.was_home = "True" %>
+      <% if match.was_home == "True" %>
         <td><%= match.team_name %></td>
         <td><%= match.opp_team_name %></td>
       <% else %>

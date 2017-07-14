@@ -1,14 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Stats</title>
-    <%= csrf_meta_tags %>
+<html lang="pl">
 
+<head>
+    <title>Clean Stats</title>
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <meta charset="utf-8">
+    <meta name="author" content="Piotr Augustyniak">
+    <meta name="description" content="Premier League Statistics. Fantasy Premier League">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <header id="header">
+      <div class="container">
+          <div id="logo">
+              <h1>FPL Stats</h1>
+          </div>
+          <div id="nav">
+              <ul>
+                  <li><%= link_to 'Main', controller: 'welcome' %></li>
+                  <li><%= link_to 'Teams', controller: 'teams' %></li>
+                  <li><%= link_to 'Players', controller: 'players' %></li>
+                  <li><%= link_to 'Matches', controller: 'matches' %></li>
+              </ul>
+          </div>
+      </div>
+  </header>
+
+    <div id="main_part">
+      <div class="container">
+      <%= yield %>
+      </div>
+    </div>
+  <footer id="footer">
+      <div class="container">
+          <p id="footer_p">a tutaj będzie polityka prywatności i ciastka...
+              <br>i Copyright &copy; 2016 P</p>
+          /* wrzucić tutaj skrypt, który będzie wyciągał najnowszy rok! */
+      </div>
+  </footer>
+</body>
+
 </html>
