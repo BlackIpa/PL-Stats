@@ -7,10 +7,30 @@ class TeamsController < ApplicationController
   def show
   	@team = Team.find(params[:id])
   end
-  def team_overwiev
 
+  def team_overwiev
+    respond_to do |format|
+      format.js
+    end
   end
   def team_offensive
+    @teams = Team.all
+    respond_to :js
+    #respond_to do |format|
+    #  format.js
+    #end
+  end
+  def team_defensive
+    respond_to do |format|
+      format.js
+    end
+  end
+  def team_booking
+    respond_to do |format|
+      format.js
+    end
+  end
+  def team_form
     respond_to do |format|
       format.js
     end

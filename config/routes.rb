@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+
+  root to: 'welcome#index', as: 'home'
+
   get 'welcome/index'
+  #get 'teams/team_offensive', to: 'teams#team_offensive'
 
   resources :teams do
   	resources :players
     resources :matches
-    collection do
-      get 'team_offensive'
-    end
     #resources :player_matches
+    collection do
+      get "team_offensive", "team_overwiev"
+    end
   end
 
   resources :players do
@@ -18,6 +22,5 @@ Rails.application.routes.draw do
     resources :player_matches
   end
 
-  root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
