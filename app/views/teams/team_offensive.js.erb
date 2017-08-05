@@ -1,1 +1,1 @@
-$('#change_target').html("<%= escape_javascript(render 'team_offensive') %>");
+$('#change_target').html("<%= j render partial: 'team_offensive', locals: {teams: @teams} %>");

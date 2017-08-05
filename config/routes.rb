@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :matches
     #resources :player_matches
     collection do
-      get "team_offensive", "team_overwiev"
+      get "teams_stats"
     end
   end
 

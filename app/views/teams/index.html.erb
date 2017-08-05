@@ -3,15 +3,16 @@
   <h1>Premier League</h1>
     <div class="diff_stats_links">
       <ul>
-        <li><%#= link_to "Overview", team_overwiev_path(@teams), remote: true %></li>
-        <li><%= link_to "Offensive", team_offensive_teams_path(@teams), remote: true %></li>
-        <li><%#= link_to "Deffensive", teams_team_defensive_path, remote: true %></li>
-        <li><%#= link_to "Booking", teams_team_booking_path, remote: true %></li>
-        <li><%#= link_to "Form", teams_team_form_path, remote: true %></li>
+        <li><%= button_to "Overview", class: "t_stats", id: "t_over", remote: true %></li>
+        <li><%= button_to "Offensive", class: "t_stats", id: "t_offe", remote: true %></li>
+        <li><%#= button_to "Deffensive", teams_stats_teams_path, id: "t_deff", remote: true %></li>
+        <li><%#= button_to "Booking", teams_stats_teams_path, id: "t_book", remote: true %></li>
+        <li><%#= button_to "Form", teams_stats_teams_path, id: "t_form", remote: true %></li>
       </ul>
     </div>
-  <div id="change_target">
-    <%= render partial: "team_overwiev", locals: {teams: @teams} %>
+  <div id="change_team_stats">
+    <div class="team_stats viss", id="team_over"><%= render partial: "team_overwiev", locals: {teams: @teams}  %></div>
+    <div class="team_stats hidd", id="team_offe"><%= render partial: "team_offensive", locals: {teams: @teams}  %></div>
   </div>
 </div>
 
