@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-#table_players {
+#player_stats {
     width: 50%;
     height: 100%;
     float: left;
@@ -25,7 +25,7 @@
     color: #212121;
 }
 
-#table_matches {
+#matches_stats {
     float: right;
     width: 50%;
     height: 100%;

@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Points</th>
+    <th>Goals Conceded</th>
+    <th>GC per Game</th>
+    <th>Tackles</th>
+    <th>Recoveries</th>
+    <th>CBI</th>
+    <th>Clean Sheets</th>
+    <th>Saves</th>
+    <th>Penalties Conceded</th>
+    <th>Penalties Saved</th>
+  </tr>
+
+  <% teams.order(points: :desc).each do |team| %>
+    <tr>
+      <td><%= link_to team.team_name, team_path(team) %></td>
+      <td><%= team.points %></td>
+      <td><%= team.goals_conceded %></td>
+      <td><%= team.goals_conceded / team.games_played %></td>
+      <td><%= team.tackles %></td>
+      <td><%= team.recoveries %></td>
+      <td><%= team.clearances_blocks_interceptions %></td>
+      <td><%= team.clean_sheets %></td>
+      <td><%= team.saves %></td>
+      <td><%= team.penalties_conceded %></td>
+      <td><%= team.penalties_saved %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Position</th>
+    <th>Red Cards</th>
+    <th>Yellow Cards</th>
+  </tr>
+
+  <% players.order(red_cards: :desc, yellow_cards: :desc).each do |player| %>
+    <tr>
+      <td><%= player.full_name %></td>
+      <td><%= player.team_name %></td>
+      <% case player.position
+      when 1 %><td>Golkeeper</td>
+      <% when 2 %><td>Defender</td>
+      <% when 3 %><td>Midfielder</td>
+      <% when 4 %><td>Forward</td>
+      <% end %>
+      <td><%= player.yellow_cards %></td>
+      <td><%= player.red_cards %></td>
+    </tr>
+  <% end %>
+</table>

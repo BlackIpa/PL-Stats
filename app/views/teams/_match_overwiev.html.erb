@@ -1,0 +1,20 @@
+<h2>Latest games</h2>
+<table>
+  <tr>
+    <th>Round</th>
+    <th>Date</th>
+    <th>VS</th>
+    <th>Result</th>
+  </tr>
+
+  <% @matches.order(round: :desc, kick_off: :desc).each do |match| %>
+    <tr>
+      <% if match.was_home == "True" %>
+        <td><%= match.round %></td>
+        <td><%= match.kick_off %></td>
+        <td><%= match.team_name %>-<%= match.opp_team_name %></td>
+        <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

@@ -1,67 +1,22 @@
 
 <div id="full_table">
-  <h1>Premier League</h1>
-    <div class="diff_stats_links">
-      <ul>
-        <li><%= button_to "Overview", class: "t_stats", id: "t_over", remote: true %></li>
-        <li><%= button_to "Offensive", class: "t_stats", id: "t_offe", remote: true %></li>
-        <li><%#= button_to "Deffensive", teams_stats_teams_path, id: "t_deff", remote: true %></li>
-        <li><%#= button_to "Booking", teams_stats_teams_path, id: "t_book", remote: true %></li>
-        <li><%#= button_to "Form", teams_stats_teams_path, id: "t_form", remote: true %></li>
-      </ul>
-    </div>
+  <%= render partial: "team_links" %>
+
   <div id="change_team_stats">
-    <div class="team_stats viss", id="team_over"><%= render partial: "team_overwiev", locals: {teams: @teams}  %></div>
-    <div class="team_stats hidd", id="team_offe"><%= render partial: "team_offensive", locals: {teams: @teams}  %></div>
+    <%= render partial: "team_overwiev", locals: {teams: @teams, players: @players, matches: @matches} %>
   </div>
+
 </div>
 
-<div id=table_players>
-  <h2>Players</h2>
-    <div class="diff_stats_links">
-      <ul>
-        <li>Offensive</li>
-        <li>Deffensive</li>
-        <li>Booking</li>
-        <li>Form</li>
-      </ul>
-    </div>
-  <table>
-    <tr>
-      <th>Player</th>
-      <th>Goals</th>
-      <th>Assists</th>
-    </tr>
+<div id="player_stats">
+  <%= render partial: "player_links" %>
 
-    <% @players.order(goals_scored: :desc, assists: :desc).each do |player| %>
-      <tr>
-        <td><%= player.full_name %></td>
-        <td><%= player.goals_scored %></td>
-        <td><%= player.assists %></td>
-      </tr>
-    <% end %>
-  </table>
+  <div id="change_player_stats">
+    <%= render partial: "player_overwiev", locals: {players: @players} %>
+  </div>
+
 </div>
 
-<div id=table_matches>
-  <h2>Latest games</h2>
-  <table>
-    <tr>
-      <th>Round</th>
-      <th>Date</th>
-      <th>VS</th>
-      <th>Result</th>
-    </tr>
-
-    <% @matches.order(round: :desc, kick_off: :desc).each do |match| %>
-      <tr>
-        <% if match.was_home == "True" %>
-          <td><%= match.round %></td>
-          <td><%= match.kick_off %></td>
-          <td><%= match.team_name %>-<%= match.opp_team_name %></td>
-          <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </table>
+<div id="matches_stats">
+  <%= render partial: "match_overwiev", locals: {matches: @matches} %>
 </div>

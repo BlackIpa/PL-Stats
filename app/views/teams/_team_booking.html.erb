@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Points</th>
+    <th>Fouls</th>
+    <th>Own Goals</th>
+    <th>Yellow Cards</th>
+    <th>Red Cards</th>
+    <th>Penalties Against</th>
+    <th>Goals after errors</th>
+    <th>Errors leading to goal attempt</th>
+  </tr>
+
+  <% teams.order(points: :desc).each do |team| %>
+    <tr>
+      <td><%= link_to team.team_name, team_path(team) %></td>
+      <td><%= team.points %></td>
+      <td><%= team.fouls %></td>
+      <td><%= team.own_goals %></td>
+      <td><%= team.yellow_cards %></td>
+      <td><%= team.red_cards %></td>
+      <td><%= team.penalties_saved + team.penalties_conceded %></td>
+      <td><%= team.errors_leading_to_goal %></td>
+      <td><%= team.errors_leading_to_goal_attempt %></td>
+    </tr>
+  <% end %>
+</table>

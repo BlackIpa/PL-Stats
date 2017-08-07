@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Position</th>
+    <th>Points</th>
+    <th>Bonus Points</th>
+  </tr>
+
+  <% players.order(total_points: :desc, bps: :desc).each do |player| %>
+    <tr>
+      <td><%= player.full_name %></td>
+      <td><%= player.team_name %></td>
+      <% case player.position
+      when 1 %><td>Golkeeper</td>
+      <% when 2 %><td>Defender</td>
+      <% when 3 %><td>Midfielder</td>
+      <% when 4 %><td>Forward</td>
+      <% end %>
+      <td><%= player.total_points %></td>
+      <td><%= player.bonus %></td>
+    </tr>
+  <% end %>
+</table>
