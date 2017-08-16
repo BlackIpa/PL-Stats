@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :players do
     resources :player_matches
+    collection do
+      get "players_stats"
+    end
   end
 
   resources :matches do

@@ -1,0 +1,34 @@
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Position</th>
+    <th>Number</th>
+    <th>Team</th>
+    <th>Fouls</th>
+    <th>Own Goals</th>
+    <th>Yellow Cards</th>
+    <th>Red Cards</th>
+    <th>Errors leading to goal</th>
+    <th>Penalties missed</th>
+  </tr>
+
+  <% players.each do |player| %>
+    <tr>
+      <td><%=  link_to player.full_name, player_path(player) %></td>
+      <% case player.position
+      when 1 %><td>Golkeeper</td>
+      <% when 2 %><td>Defender</td>
+      <% when 3 %><td>Midfielder</td>
+      <% when 4 %><td>Forward</td>
+      <% end %>
+      <td><%= player.squad_number %></td>
+      <td><%= player.team_name %></td>
+      <td><%= player.fouls %></td>
+      <td><%= player.own_goals %></td>
+      <td><%= player.yellow_cards %></td>
+      <td><%= player.red_cards %></td>
+      <td><%= player.errors_leading_to_goal %></td>
+      <td><%= player.penalties_missed %></td>
+    </tr>
+  <% end %>
+</table>

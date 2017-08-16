@@ -1,17 +1,5 @@
 $(document).ready(function(){
 //$(document).on('turbolinks:load', function() {
-  $("#t_over").click(function(){
-    $('#change_team_stats').html("<%= j render partial: 'team_overwiev', locals: {teams: @teams, players: @players} %>");
-  });
-  $("#t_offe").click(function(){
-    $('#change_team_stats').html("<%= j render partial: 'team_offensive', locals: {teams: @teams, players: @players} %>");
-  });
-  $("#t_deff").click(function(){
-    $('#change_team_stats').html("<%= j render partial: 'team_deffensive', locals: {teams: @teams, players: @players} %>");
-  });
-  $("#t_book").click(function(){
-    $('#change_team_stats').html("<%= j render partial: 'team_booking', locals: {teams: @teams, players: @players} %>");
-  });
   $("#p_over").click(function(){
     $('#change_player_stats').html("<%= j render partial: 'player_overwiev', locals: {players: @players} %>");
   });

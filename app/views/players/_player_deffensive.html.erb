@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Position</th>
+    <th>Number</th>
+    <th>Team</th>
+    <th>Tackles</th>
+    <th>Recoveries</th>
+    <th>CBI</th>
+    <th>Clean Sheets</th>
+    <th>Saves</th>
+    <th>Penalties Conceded</th>
+    <th>Penalties Saved</th>
+  </tr>
+
+  <% players.order(clean_sheets: :desc).each do |player| %>
+    <tr>
+      <td><%=  link_to player.full_name, player_path(player) %></td>
+      <% case player.position
+      when 1 %><td>Golkeeper</td>
+      <% when 2 %><td>Defender</td>
+      <% when 3 %><td>Midfielder</td>
+      <% when 4 %><td>Forward</td>
+      <% end %>
+      <td><%= player.squad_number %></td>
+      <td><%= player.team_name %></td>
+      <td><%= player.tackles %></td>
+      <td><%= player.recoveries %></td>
+      <td><%= player.clearances_blocks_interceptions %></td>
+      <td><%= player.clean_sheets %></td>
+      <td><%= player.saves %></td>
+      <% if player.position == 1 %><td><%= player.penalties_conceded %></td>
+      <% else %><td>0</td>
+      <% end %>
+      <td><%= player.penalties_saved %></td>
+    </tr>
+  <% end %>
+</table>

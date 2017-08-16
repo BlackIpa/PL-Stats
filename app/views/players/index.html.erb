@@ -1,41 +1,9 @@
-<h1>All players list</h1>
+<div id="full_table">
+  <%= render partial: "player_links" %>
 
-<table>
-  <tr>
-    <th>Player</th>
-    <th>Position</th>
-    <th>Number</th>
-    <th>Team</th>
-    <th>Games played</th>
-    <th>Minutes Played</th>
-    <th>Points</th>
-    <th>Bonus Points</th>
-    <th>Pts per Game</th>
-    <th>Goals</th>
-    <th>Assists</th>
-    <th>Clean Sheets</th>
-    <th>Yellow Cards</th>
-    <th>Red Cards</th>
-    <th>Own Goals</th>
-  </tr>
+  <div id="change_player_stats">
+    <%= render partial: "player_overwiev", locals: {players: @players, teams: @teams, matches: @matches} %>
+  </div>
 
-  <% @players.each do |player| %>
-    <tr>
-      <td><%=  link_to player.full_name, player_path(player) %></td>
-      <td><%= player.position %></td>
-      <td><%= player.squad_number %></td>
-      <td><%= player.team_name %></td>
-      <td>> 0 min</td>
-      <td><%= player.minutes %></td>
-      <td><%= player.total_points %></td>
-      <td><%= player.bonus %></td>
-      <td><%= player.points_per_game %></td>
-      <td><%= player.goals_scored %></td>
-      <td><%= player.assists %></td>
-      <td><%= player.clean_sheets %></td>
-      <td><%= player.yellow_cards %></td>
-      <td><%= player.red_cards %></td>
-      <td><%= player.own_goals %></td>
-    </tr>
-  <% end %>
-</table>
+</div>
+
