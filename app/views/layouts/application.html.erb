@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <title>Clean Stats</title>
     <%= csrf_meta_tags %>
@@ -14,33 +13,11 @@
 </head>
 
 <body>
-  <header id="header">
-      <div class="container">
-          <div id="logo">
-              <h1>FPL Stats</h1>
-          </div>
-          <div id="nav">
-              <ul>
-                  <li><%= link_to 'Main', controller: 'welcome' %></li>
-                  <li><%= link_to 'Teams', teams_path %></li>
-                  <li><%= link_to 'Players', players_path %></li>
-              </ul>
-          </div>
-      </div>
-  </header>
-
-    <div id="main_part">
-      <div class="container">
-      <%= yield %>
-      </div>
-    </div>
-  <footer id="footer">
-      <div class="container">
-          <p id="footer_p">a tutaj będzie polityka prywatności i ciastka...
-              <br>i Copyright &copy; 2016 P</p>
-          /* wrzucić tutaj skrypt, który będzie wyciągał najnowszy rok! */
-      </div>
-  </footer>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
 </body>
 
 </html>

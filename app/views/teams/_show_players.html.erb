@@ -1,24 +1,30 @@
+<h2>Players</h2><p><%= link_to 'See all players', players_path %></p>
+
 <table class="table table-striped table-inverse">
   <tr>
-    <th>Player</th>
-    <th>Team</th>
+    <th>Player Name</th>
     <th>Position</th>
+    <th>Minutes</th>
+    <th>Points</th>
     <th>Goals</th>
     <th>Assists</th>
+    <th>Clean Sheets</th>
   </tr>
 
-  <% players.order(goals_scored: :desc, assists: :desc).each do |player| %>
+  <% @team.players.order(position: :asc, second_name: :asc).each do |player| %>
     <tr>
       <td><%= player.full_name %></td>
-      <td><%= player.team_name %></td>
       <% case player.position
       when 1 %><td>Golkeeper</td>
       <% when 2 %><td>Defender</td>
       <% when 3 %><td>Midfielder</td>
       <% when 4 %><td>Forward</td>
       <% end %>
+      <td><%= player.minutes %></td>
+      <td><%= player.total_points %></td>
       <td><%= player.goals_scored %></td>
       <td><%= player.assists %></td>
+      <td><%= player.clean_sheets %></td>
     </tr>
   <% end %>
 </table>

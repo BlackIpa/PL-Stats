@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+      <%= link_to 'FPL Stats', '/', class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= 'active' if params[:controller] == 'teams' %>">
+            <%= link_to 'Teams', teams_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item <%= 'active' if params[:controller] == 'players' %>">
+            <%= link_to 'Players', players_path, class: "nav-link" %>
+          </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search players or teams" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+  </div>
+</nav>

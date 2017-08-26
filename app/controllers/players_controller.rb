@@ -3,6 +3,7 @@ class PlayersController < ApplicationController
   def index
     @teams = Team.all
   	@players = Player.all.limit(20)
+    @player_matches = PlayerMatch.all.limit(20)
   end
 
   def show

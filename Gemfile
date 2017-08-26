@@ -25,7 +25,8 @@ gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'jquery-ui-rails'
 
 # Use bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap', '~> 4.0.0.beta'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: 'welcome#index', as: 'home'
+  root to: 'home#index', as: 'home'
 
-  get 'welcome/index'
+  get 'home/index'
   #get 'teams/team_offensive', to: 'teams#team_offensive'
 
   resources :teams do

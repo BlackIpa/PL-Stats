@@ -1,9 +1,13 @@
 <h1>Premier League</h1>
 <div class="diff_stats_links">
-  <ul>
-    <li><%= link_to "Overview", teams_stats_teams_path, id: "t_over", remote: true %></li>
-    <li><%= link_to "Offensive", teams_stats_teams_path, id: "t_offe", remote: true %></li>
-    <li><%= link_to "Deffensive", teams_stats_teams_path, id: "t_deff", remote: true %></li>
-    <li><%= link_to "Booking", teams_stats_teams_path, id: "t_book", remote: true %></li>
-  </ul>
+  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <ul class="nav nav-tabs t_buttons">
+        <li class="nav-item"><%= link_to "Overview", teams_stats_teams_path, id: "t_over",  class: "nav-link", remote: true %></li>
+        <li class="nav-item"><%= link_to "Offensive", teams_stats_teams_path, id: "t_offe",  class: "nav-link", remote: true %></li>
+        <li class="nav-item"><%= link_to "Deffensive", teams_stats_teams_path, id: "t_deff",  class: "nav-link", remote: true %></li>
+        <li class="nav-item"><%= link_to "Booking", teams_stats_teams_path, id: "t_book",  class: "nav-link", remote: true %></li>
+      </ul>
+    </div>
+  </div>
 </div>
