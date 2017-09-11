@@ -1,9 +1,9 @@
 <h2>Latest games</h2>
-<table class="table table-striped table-inverse">
+<table class="table sts_table">
   <tr>
     <th>Round</th>
     <th>Date</th>
-    <th>VS</th>
+    <th class="alg_left">VS</th>
     <th>Result</th>
   </tr>
 
@@ -12,7 +12,7 @@
       <% if match.was_home == "True" %>
         <td><%= match.round %></td>
         <td><%= match.kick_off %></td>
-        <td><%= match.team_name %>-<%= match.opp_team_name %></td>
+        <td class="alg_left"><%= match.team_name %>-<%= match.opp_team_name %></td>
         <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
       <% end %>
     </tr>

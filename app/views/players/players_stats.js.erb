@@ -1,5 +1,4 @@
 $(document).ready(function(){
-//$(document).on('turbolinks:load', function() {
   $("#p_over").click(function(){
     $('#change_player_stats').html("<%= j render partial: 'player_overwiev', locals: {players: @players} %>");
   });

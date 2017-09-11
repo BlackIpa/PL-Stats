@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'home#index', as: 'home'
-
-  get 'home/index'
-  #get 'teams/team_offensive', to: 'teams#team_offensive'
+  root to: 'homes#index', as: 'home'
 
   resources :teams do
   	resources :players

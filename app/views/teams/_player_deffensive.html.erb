@@ -1,21 +1,21 @@
-<table class="table table-striped table-inverse">
+<table class="table sts_table">
   <tr>
-    <th>Player</th>
-    <th>Team</th>
-    <th>Position</th>
+    <th class="alg_left">Player</th>
+    <th class="alg_left">Team</th>
+    <th class="alg_left">Position</th>
     <th>Clean Sheets</th>
     <th>Tackles</th>
   </tr>
 
   <% players.order(clean_sheets: :desc, tackles: :desc).each do |player| %>
     <tr>
-      <td><%= player.full_name %></td>
-      <td><%= player.team_name %></td>
+      <td class="alg_left"><%= player.full_name %></td>
+      <td class="alg_left"><%= player.team_name %></td>
       <% case player.position
-      when 1 %><td>Golkeeper</td>
-      <% when 2 %><td>Defender</td>
-      <% when 3 %><td>Midfielder</td>
-      <% when 4 %><td>Forward</td>
+      when 1 %><td class="alg_left">Golkeeper</td>
+      <% when 2 %><td class="alg_left">Defender</td>
+      <% when 3 %><td class="alg_left">Midfielder</td>
+      <% when 4 %><td class="alg_left">Forward</td>
       <% end %>
       <td><%= player.clean_sheets %></td>
       <td><%= player.tackles %></td>

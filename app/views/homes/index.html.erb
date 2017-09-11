@@ -1,0 +1,14 @@
+<h1>Fantas Premier League Stats Site</h1>
+
+<p>This will be the main page of the application</p>
+<% @teams.each do |t| %>
+<%# t = @teams %>
+<p><%= t[:team_name] + " scored " + t[:goals_scored].to_s + " goals in Premier League" %></p>
+<% end %>
+<%# p = @player %>
+<%# loop do %>
+  <%# @player = Player.order("RAND()").first %>
+  <% @players.each do |p| %>
+  <p><%= p[:full_name] + " from " + p[:team_name] + " gathered " + p[:total_points].to_s + " points" %></p>
+  <%# break if p[:total_points].to_i > 150 %>
+<% end %>

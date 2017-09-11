@@ -1,6 +1,6 @@
-<table class="table table-striped table-inverse">
+<table class="table sts_table">
   <tr>
-    <th>Team</th>
+    <th class="alg_left">Team</th>
     <th>Points</th>
     <th>Goals Conceded</th>
     <th>GC per Game</th>
@@ -15,7 +15,7 @@
 
   <% teams.order(points: :desc).each do |team| %>
     <tr>
-      <td><%= link_to team.team_name, team_path(team) %></td>
+      <td class="alg_left"><%= link_to team.team_name, team_path(team) %></td>
       <td><%= team.points %></td>
       <td><%= team.goals_conceded %></td>
       <td><%= team.goals_conceded / team.games_played %></td>

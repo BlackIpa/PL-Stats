@@ -1,0 +1,121 @@
+@import "bootstrap";
+
+.bcg { background: #FBFBFB; }
+.main-dark { background: #325C6A; }
+.main-light { background: #6A9A9E; }
+.sec-light { background: #C4DCDE; }
+.sec-grey { background: #F5F5F5; }
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  background: #FBFBFB;
+  min-height: 75rem;
+  padding-top: 4.3rem;
+}
+
+table, th, td {
+  border: none !important;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 1.5rem !important;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.logo-img img {
+  height: 50px;
+  width: 50px;
+}
+
+.search_icon {
+  height: 30px;
+  width: 30px;
+}
+
+.btn {
+  border: none;
+  background: #325C6A;
+}
+
+.schr_btn {
+  padding: 0rem !important;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.diff_stats_links {
+  margin-top: 3rem;
+}
+
+.sts_btn {
+  margin: 0rem 0.2rem;
+  padding: 0.35rem;
+  width: 105px;
+  background: #F5F5F5;
+  color: #6A9A9E;
+  font-style: bold;
+  font-size: 0.9rem;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.sts_active, .t_sts_btn:hover, .p_sts_btn:hover {
+  background: #6A9A9E;
+  color: #F5F5F5;
+}
+
+.diff_stats_links {
+  margin-bottom: 0.75rem;
+}
+
+.sts_table {
+  background-color: #F5F5F5;
+  font-size: 1rem;
+  color: black;
+}
+
+.sts_table th {
+  border-bottom: 2px solid #325C6A !important;
+  padding: 0.5rem;
+}
+
+ .sts_table td {
+  padding: 0.5rem;
+}
+
+.sts_table a {
+  color: black;
+}
+
+.sts_table a:hover {
+  color: #6A9A9E;
+}
+
+.alg_left {
+    text-align: left;
+}
+
+.sts_table tr:nth-child(odd) {
+  background-color: #FBFBFB;
+}
+
+.mtch_table {
+  margin-top: 89.2px;
+}
