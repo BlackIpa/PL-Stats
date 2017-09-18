@@ -1,9 +1,6 @@
-<h2>Players</h2>
 <div class="diff_stats_links">
-  <ul>
-    <li><%= link_to "Overview", players_stats_players_path, id: "p_over", remote: true %></li>
-    <li><%= link_to "Offensive", players_stats_players_path, id: "p_offe", remote: true %></li>
-    <li><%= link_to "Deffensive", players_stats_players_path, id: "p_deff", remote: true %></li>
-    <li><%= link_to "Booking", players_stats_players_path, id: "p_book", remote: true %></li>
-  </ul>
+  <%= link_to "OVERVIEW", players_stats_players_path, id: "p_over", class: "btn sts_btn t_sts_btn sts_active", remote: true %>
+  <%= link_to "OFFENSIVE", players_stats_players_path, id: "p_offe", class: "btn sts_btn t_sts_btn", remote: true %>
+  <%= link_to "DEFFENSIVE", players_stats_players_path, id: "p_deff", class: "btn sts_btn t_sts_btn", remote: true %>
+  <%= link_to "BOOKING", players_stats_players_path, id: "p_book", class: "btn sts_btn t_sts_btn", remote: true %>
 </div>

@@ -1,15 +1,14 @@
-<table class="table sts_table">
+<table class="table sts_table team_table">
   <tr>
     <th class="alg_left">Team</th>
-    <th>Points</th>
-    <th>Goals Scored</th>
-    <th>GS per Game</th>
-    <th>Penalties</th>
-    <th>Penalties Scored</th>
-    <th>Passes Success Rate</th>
-    <th>Offsides</th>
-    <th>Missed</th>
-    <th>Dribbles</th>
+    <th><abbr title="Points">PTS</abbr></th>
+    <th><abbr title="Goals For">GF</abbr></th>
+    <th><abbr title="Goals per Game">GPG</abbr></th>
+    <th><abbr title="Assists">A</abbr></th>
+    <th><abbr title="Passes Success Rate">PSR</abbr></th>
+    <th><abbr title="Offsides">OFF</abbr></th>
+    <th><abbr title="Missed">MS</abbr></th>
+    <th><abbr title="Dribbles">DB</abbr></th>
   </tr>
 
   <% teams.order(points: :desc).each do |team| %>
@@ -18,9 +17,8 @@
       <td><%= team.points %></td>
       <td><%= team.goals_scored %></td>
       <td><%= team.goals_scored / team.games_played %></td>
-      <td>ND</td>
-      <td>ND</td>
-      <td><%= team.passes_success %></td>
+      <td><%= team.assists %></td>
+      <td><%= team.passes_success.round %></td>
       <td><%= team.offside %></td>
       <td><%= team.target_missed %></td>
       <td><%= team.dribbles %></td>

@@ -1,21 +1,21 @@
-<table class="table sts_table">
+<table class="table sts_table pl_table">
   <tr>
     <th class="alg_left">Player</th>
     <th class="alg_left">Team</th>
-    <th class="alg_left">Position</th>
-    <th>Clean Sheets</th>
-    <th>Tackles</th>
+    <th class="alg_left"><abbr title="Position">P</abbr></th>
+    <th><abbr title="Clean Sheets">CS</abbr></th>
+    <th><abbr title="Tackles">T</abbr></th>
   </tr>
 
   <% players.order(clean_sheets: :desc, tackles: :desc).each do |player| %>
     <tr>
-      <td class="alg_left"><%= player.full_name %></td>
-      <td class="alg_left"><%= player.team_name %></td>
+      <td class="alg_left"><%= link_to player.full_name, player_path(player) %></td>
+      <td class="alg_left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
       <% case player.position
-      when 1 %><td class="alg_left">Golkeeper</td>
-      <% when 2 %><td class="alg_left">Defender</td>
-      <% when 3 %><td class="alg_left">Midfielder</td>
-      <% when 4 %><td class="alg_left">Forward</td>
+        when 1 %><td class="alg_left">GK</td>
+        <% when 2 %><td class="alg_left">DEF</td>
+        <% when 3 %><td class="alg_left">MID</td>
+        <% when 4 %><td class="alg_left">FWD</td>
       <% end %>
       <td><%= player.clean_sheets %></td>
       <td><%= player.tackles %></td>

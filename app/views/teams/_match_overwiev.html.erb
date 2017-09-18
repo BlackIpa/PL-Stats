@@ -1,5 +1,5 @@
 <h2>Latest games</h2>
-<table class="table sts_table">
+<table class="table sts_table mtch_table">
   <tr>
     <th>Round</th>
     <th>Date</th>
@@ -7,14 +7,12 @@
     <th>Result</th>
   </tr>
 
-  <% @matches.order(round: :desc, kick_off: :desc).each do |match| %>
+  <% @matches.order(round: :desc).each do |match| %>
     <tr>
-      <% if match.was_home == "True" %>
-        <td><%= match.round %></td>
-        <td><%= match.kick_off %></td>
-        <td class="alg_left"><%= match.team_name %>-<%= match.opp_team_name %></td>
-        <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
-      <% end %>
+      <td><%= match.round %></td>
+      <td><%= match.kick_off.slice(0,6) %></td>
+      <td class="alg_left"><%= match.team_name %>-<%= match.opp_team_name %></td>
+      <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
     </tr>
   <% end %>
 </table>

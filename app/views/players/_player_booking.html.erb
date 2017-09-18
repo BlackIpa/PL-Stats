@@ -1,6 +1,6 @@
-<table>
+<table class="table sts_table">
   <tr>
-    <th>Player</th>
+    <th class="alg_left">Player</th>
     <th>Position</th>
     <th>Number</th>
     <th>Team</th>
@@ -8,21 +8,21 @@
     <th>Own Goals</th>
     <th>Yellow Cards</th>
     <th>Red Cards</th>
-    <th>Errors leading to goal</th>
-    <th>Penalties missed</th>
+    <th><abbr title="Errors leading to goal">EG</abbr></th>
+    <th><abbr title="Penalties Missed">PM</abbr></th>
   </tr>
 
-  <% players.each do |player| %>
+  <% players.order(yellow_cards: :desc, red_cards: :desc).each do |player| %>
     <tr>
-      <td><%=  link_to player.full_name, player_path(player) %></td>
+      <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
       <% case player.position
-      when 1 %><td>Golkeeper</td>
-      <% when 2 %><td>Defender</td>
-      <% when 3 %><td>Midfielder</td>
-      <% when 4 %><td>Forward</td>
+      when 1 %><td class="alg_left">Golkeeper</td>
+      <% when 2 %><td class="alg_left">Defender</td>
+      <% when 3 %><td class="alg_left">Midfielder</td>
+      <% when 4 %><td class="alg_left">Forward</td>
       <% end %>
       <td><%= player.squad_number %></td>
-      <td><%= player.team_name %></td>
+      <td class="alg_left"><%= player.team_name %></td>
       <td><%= player.fouls %></td>
       <td><%= player.own_goals %></td>
       <td><%= player.yellow_cards %></td>

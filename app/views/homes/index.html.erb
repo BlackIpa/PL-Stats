@@ -1,14 +1,30 @@
 <h1>Fantas Premier League Stats Site</h1>
 
-<p>This will be the main page of the application</p>
-<% @teams.each do |t| %>
-<%# t = @teams %>
-<p><%= t[:team_name] + " scored " + t[:goals_scored].to_s + " goals in Premier League" %></p>
-<% end %>
-<%# p = @player %>
-<%# loop do %>
-  <%# @player = Player.order("RAND()").first %>
-  <% @players.each do |p| %>
-  <p><%= p[:full_name] + " from " + p[:team_name] + " gathered " + p[:total_points].to_s + " points" %></p>
-  <%# break if p[:total_points].to_i > 150 %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <% @teams.each do |t| %>
+
+      <div class="col-md-4 show_table">
+        <div class="home_title">
+          <span><%= t[:team_name] %></span>
+        </div>
+        <p class="home_data"><%= "Won " + t[:won].to_s + " out of " + t[:games_played].to_s + " games" %></p>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="row justify-content-center">
+    <% @players.each do |p| %>
+
+      <div class="col-md-4 show_table">
+        <div class="home_title">
+          <span><%= p[:full_name] %></span><br>
+          <span class="home_subtitle"><%= p[:team_name] %></span>
+        </div>
+        <p class="home_data"><%= "Gathered " + p[:total_points].to_s + " points" %></p>
+      </div>
+
+    <% end %>
+  </div>
+</div>

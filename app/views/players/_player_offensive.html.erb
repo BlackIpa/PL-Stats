@@ -1,36 +1,34 @@
-<table>
+<table class="table sts_table">
   <tr>
-    <th>Player</th>
+    <th class="alg_left">Player</th>
     <th>Position</th>
     <th>Number</th>
     <th>Team</th>
     <th>Goals</th>
     <th>Assists</th>
-    <th>Chances Created</th>
-    <th>Passes Success</th>
+    <th><abbr title="Chances Created">CC</abbr></th>
+    <th><abbr title="Passes Success">PS</abbr></th>
     <th>Offsides</th>
-    <th>Shots missed</th>
     <th>Dribbles</th>
     <th>Tackled</th>
   </tr>
 
   <% players.order(goals_scored: :desc).each do |player| %>
     <tr>
-      <td><%=  link_to player.full_name, player_path(player) %></td>
+      <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
       <% case player.position
-      when 1 %><td>Golkeeper</td>
-      <% when 2 %><td>Defender</td>
-      <% when 3 %><td>Midfielder</td>
-      <% when 4 %><td>Forward</td>
+      when 1 %><td class="alg_left">Golkeeper</td>
+      <% when 2 %><td class="alg_left">Defender</td>
+      <% when 3 %><td class="alg_left">Midfielder</td>
+      <% when 4 %><td class="alg_left">Forward</td>
       <% end %>
       <td><%= player.squad_number %></td>
-      <td><%= player.team_name %></td>
+      <td class="alg_left"><%= player.team_name %></td>
       <td><%= player.goals_scored %></td>
       <td><%= player.assists %></td>
       <td><%= player.big_chances_created %></td>
       <td><%= player.passes_success %></td>
       <td><%= player.offside %></td>
-      <td><%= player.target_missed %></td>
       <td><%= player.dribbles %></td>
       <td><%= player.tackled %></td>
     </tr>

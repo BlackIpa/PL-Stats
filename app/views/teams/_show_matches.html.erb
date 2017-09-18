@@ -1,6 +1,6 @@
 <h2>Matches</h2>
 
-<table class="table table-striped table-inverse">
+<table class="table sts_table mtch_table">
   <tr>
     <th>Round</th>
     <th>Date</th>
@@ -9,7 +9,7 @@
     <th>Result</th>
   </tr>
 
-  <% @team.matches.limit(10).order(round: :desc).each do |match| %>
+  <% @team.matches.order(round: :desc).each do |match| %>
     <tr>
       <td><%= match.round %></td>
       <td><%= match.kick_off %></td>

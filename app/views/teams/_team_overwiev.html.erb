@@ -1,15 +1,15 @@
-<table class="table sts_table">
+<table class="table sts_table team_table">
   <tr>
     <th class="alg_left">Team</th>
-    <th>Points</th>
-    <th>Matches</th>
-    <th>Won</th>
-    <th>Draws</th>
-    <th>Lost</th>
-    <th>Scored</th>
-    <th>Conceded</th>
-    <th>Goals Difference</th>
-    <th>PPG</th>
+    <th><abbr title="Points">PTS</abbr></th>
+    <th><abbr title="Matches Played">P</abbr></th>
+    <th><abbr title="Won">W</abbr></th>
+    <th><abbr title="Draw">D</abbr></th>
+    <th><abbr title="Lost">L</abbr></th>
+    <th><abbr title="Goals For">GF</abbr></th>
+    <th><abbr title="Goals Against">GA</abbr></th>
+    <th><abbr title="Goals Difference">GD</abbr></th>
+    <th><abbr title="Points per Game">PPG</abbr></th>
   </tr>
 
   <% teams.order(points: :desc).each do |team| %>
@@ -22,7 +22,7 @@
       <td><%= team.lost %></td>
       <td><%= team.goals_scored %></td>
       <td><%= team.goals_conceded %></td>
-      <td><%= team.goals_diff %></td>
+      <td><%= team.goals_diff > 0 ? "+" : "" %><%= team.goals_diff %></td>
       <td><%= team.points_per_game %></td>
     </tr>
   <% end %>

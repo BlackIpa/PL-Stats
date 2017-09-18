@@ -1,18 +1,17 @@
-<div class="col">
-  <%= render partial: "team_links" %>
-  <div id="change_team_stats">
-    <%= render partial: "team_overwiev", locals: {teams: @teams} %>
-  </div>
+<h1>Premier League</h1>
+<%= render partial: "team_links" %>
+<div id="change_team_stats">
+  <%= render partial: "team_overwiev", locals: {teams: @teams} %>
 </div>
 
 <div class="row">
-  <div class="col-6">
+  <div class="col-lg-6">
     <%= render partial: "player_links" %>
     <div id="change_player_stats">
       <%= render partial: "player_overwiev", locals: {players: @players} %>
     </div>
   </div>
-  <div class="col-6">
+  <div class="col-lg-6 mtch_padding">
     <%= render partial: "match_overwiev", locals: {matches: @matches} %>
   </div>
 </div>
