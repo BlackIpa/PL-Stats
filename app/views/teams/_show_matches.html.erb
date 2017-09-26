@@ -1,25 +1,25 @@
 <h2>Matches</h2>
 
-<table class="table sts_table mtch_table">
+<table class="sts_table team_matches">
   <tr>
-    <th>Round</th>
+    <th>Rd</th>
     <th>Date</th>
     <th>Home</th>
     <th>Away</th>
-    <th>Result</th>
+    <th>Rs</th>
   </tr>
 
   <% @team.matches.order(round: :desc).each do |match| %>
     <tr>
       <td><%= match.round %></td>
-      <td><%= match.kick_off %></td>
+      <td><%= match.kick_off.slice(0,6) %></td>
 
       <% if match.was_home == "True" %>
-        <td><%= match.team_name %></td>
-        <td><%= match.opp_team_name %></td>
+        <td><%= link_to match.team_name, team_path(match.team_id) %></td>
+        <td><%= link_to match.opp_team_name, team_path(match.opp_team_id) %></td>
       <% else %>
-        <td><%= match.opp_team_name %></td>
-        <td><%= match.team_name %></td>
+        <td><%= link_to match.opp_team_name, team_path(match.opp_team_id) %></td>
+        <td><%= link_to match.team_name, team_path(match.team_id) %></td>
       <% end %>
 
       <td><%= match.team_h_score %>:<%= match.team_a_score %></td>

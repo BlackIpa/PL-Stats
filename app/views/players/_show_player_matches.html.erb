@@ -1,0 +1,143 @@
+ <!-- OVERWIEV -->
+<div>
+  <table id="over_m" class="sts_table team_matches">
+    <tr>
+      <th><abbr title="Kick Off">KO</abbr></th>
+      <th><abbr title="Home">H</abbr></th>
+      <th><abbr title="Away">A</abbr></th>
+      <th><abbr title="Result">R</abbr></th>
+      <th><abbr title="Minutes Played">MP</abbr></th>
+      <th><abbr title="Points">P</abbr></th>
+      <th><abbr title="Bouns Points">BP</abbr></th>
+      <th><abbr title="Threat">T</abbr></th>
+      <th><abbr title="Influence">I</abbr></th>
+    </tr>
+
+    <% @player.player_matches.each do |player_match| %>
+      <tr>
+        <td><%= player_match.kickoff_time_formatted.slice(0,6) %></td>
+        <% if player_match.was_home == "True" %>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+        <% else %>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+        <% end %>
+        <td><%= player_match.team_h_score %>:<%= player_match.team_a_score %></td>
+        <td><%= player_match.minutes %></td>
+        <td><%= player_match.total_points %></td>
+        <td><%= player_match.bonus %></td>
+        <td><%= player_match.threat %></td>
+        <td><%= player_match.influence %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- OFFENISVE -->
+<div>
+  <table id="offe_m" class="sts_table team_matches hidden">
+    <tr>
+      <th><abbr title="Kick Off">KO</abbr></th>
+      <th><abbr title="Home">H</abbr></th>
+      <th><abbr title="Away">A</abbr></th>
+      <th><abbr title="Result">R</abbr></th>
+      <th><abbr title="Minutes Played">MP</abbr></th>
+      <th><abbr title="Goals">G</abbr></th>
+      <th><abbr title="Assists">A</abbr></th>
+      <th><abbr title="Chances Created">CC</abbr></th>
+      <th><abbr title="Passes Success Rate">PSR</abbr></th>
+    </tr>
+
+    <% @player.player_matches.each do |player_match| %>
+      <tr>
+        <td><%= player_match.kickoff_time_formatted.slice(0,6) %></td>
+        <% if player_match.was_home == "True" %>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+        <% else %>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+        <% end %>
+        <td><%= player_match.team_h_score %>:<%= player_match.team_a_score %></td>
+        <td><%= player_match.minutes %></td>
+        <td><%= player_match.goals_scored %></td>
+        <td><%= player_match.assists %></td>
+        <td><%= player_match.big_chances_created %></td>
+        <td><%= player_match.passes_success.round %>%</td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- DEFFENSIVE -->
+<div>
+  <table id="deff_m" class="sts_table team_matches hidden">
+    <tr>
+      <th><abbr title="Kick Off">KO</abbr></th>
+      <th><abbr title="Home">H</abbr></th>
+      <th><abbr title="Away">A</abbr></th>
+      <th><abbr title="Result">R</abbr></th>
+      <th><abbr title="Minutes Played">MP</abbr></th>
+      <th><abbr title="Tackles">TC</abbr></th>
+      <th><abbr title="Recoveries">RC</abbr></th>
+      <th><abbr title="Clean Sheets">CS</abbr></th>
+      <th><abbr title="Saves">SV</abbr></th>
+    </tr>
+
+    <% @player.player_matches.each do |player_match| %>
+      <tr>
+        <td><%= player_match.kickoff_time_formatted.slice(0,6) %></td>
+        <% if player_match.was_home == "True" %>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+        <% else %>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+        <% end %>
+        <td><%= player_match.team_h_score %>:<%= player_match.team_a_score %></td>
+        <td><%= player_match.minutes %></td>
+        <td><%= player_match.tackles %></td>
+        <td><%= player_match.recoveries %></td>
+        <td><%= player_match.clean_sheets %></td>
+        <td><%= player_match.saves %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- BOOKING -->
+<div>
+  <table id="book_m" class="sts_table team_matches hidden">
+    <tr>
+      <th><abbr title="Kick Off">KO</abbr></th>
+      <th><abbr title="Home">H</abbr></th>
+      <th><abbr title="Away">A</abbr></th>
+      <th><abbr title="Result">R</abbr></th>
+      <th><abbr title="Minutes Played">MP</abbr></th>
+      <th><abbr title="Own Goals">OG</abbr></th>
+      <th><abbr title="Fouls">FL</abbr></th>
+      <th><abbr title="Yellow Cards">YC</abbr></th>
+      <th><abbr title="Red Cards">RC</abbr></th>
+    </tr>
+
+    <% @player.player_matches.each do |player_match| %>
+      <tr>
+        <td><%= player_match.kickoff_time_formatted.slice(0,6) %></td>
+        <% if player_match.was_home == "True" %>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+        <% else %>
+          <td><%= link_to player_match.opp_team_name, team_path(player_match.opp_team_id) %></td>
+          <td><%= link_to player_match.team_name, team_path(player_match.team_id) %></td>
+        <% end %>
+        <td><%= player_match.team_h_score %>:<%= player_match.team_a_score %></td>
+        <td><%= player_match.minutes %></td>
+        <td><%= player_match.own_goals %></td>
+        <td><%= player_match.fouls %></td>
+        <td><%= player_match.yellow_cards %></td>
+        <td><%= player_match.red_cards %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

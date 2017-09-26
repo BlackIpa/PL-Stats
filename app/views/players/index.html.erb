@@ -1,12 +1,12 @@
 <div class="row padding_adj">
-  <div class="col-sm-6 col-12 p-0">
+  <div class="col-4 p-sm-0 pl-2">
     <h1>Players</h1>
   </div>
 
-  <div class="col-sm-6 col-12 p-0">
-    <form class="form-inline my-0 search_form">
+  <div class="col-8 p-sm-0 pr-2">
+    <form class="form-inline my-0 search_form mt-1">
         <input class="form-control mr-0 search_form_inp" type="text" placeholder="Search for players" aria-label="Search">
-        <button class="btn my-2 ml-2 schr_btn" type="submit">
+        <button class="btn pl-2 schr_btn" type="submit">
           <%= image_tag('search.png', alt: "Search", class: "search_icon") %>
         </button>
     </form>
@@ -16,5 +16,5 @@
 <%= render partial: "player_links" %>
 
 <div id="change_player_stats">
-  <%= render partial: "player_overwiev", locals: {players: @players, teams: @teams, matches: @matches} %>
+  <%= render partial: "player_stats", locals: {players: @players, teams: @teams} %>
 </div>

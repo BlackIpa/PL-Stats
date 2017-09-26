@@ -5,17 +5,17 @@ Rails.application.routes.draw do
   resources :teams do
   	resources :players
     resources :matches
-    #resources :player_matches
-    collection do
-      get "teams_stats"
-    end
+    # collection do
+    #   get "teams_stats"
+    #   get "show_players"
+    # end
   end
 
   resources :players do
     resources :player_matches
-    collection do
-      get "players_stats"
-    end
+    # collection do
+    #   get "players_stats"
+    # end
   end
 
   resources :matches do

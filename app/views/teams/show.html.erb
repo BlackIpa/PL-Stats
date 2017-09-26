@@ -1,6 +1,6 @@
-<%#= link_to image_tag('left-arrow.png'), teams_path, class: "navbar-brand logo-img" %>
 <%= render partial: "show_team", locals: {teams: @teams} %>
 
-<%= render partial: "show_players", locals: {teams: @teams, players: @players} %>
+<%= render partial: "show_player_links" %>
+<%= render partial: "show_players_stats", locals: {teams: @teams, players: @players} %>
 
 <%= render partial: "show_matches", locals: {teams: @teams, matches: @matches} %>

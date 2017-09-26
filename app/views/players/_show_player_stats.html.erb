@@ -1,0 +1,169 @@
+<h1 class="bigger_h1"><%= @player.full_name %></h1>
+
+<div class="row main_t_stats">
+
+  <div class="img_space col-sm-4">
+    <%= image_tag('shirt.png', alt: "Team Shirt", class: "shirt") %>
+  </div>
+
+  <div class="col-12 col-sm-8">
+
+    <div class="row primary_row">
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @player.player_matches.where('minutes > ?', 0).count %></div>
+        <div class="stat_title">GAMES</div>
+      </div>
+
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @player.total_points %></div>
+        <div class="stat_title">POINTS</div>
+      </div>
+
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @player.bonus %></div>
+        <div class="stat_title">BONUS</div>
+      </div>
+
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @player.squad_number %></div>
+        <div class="stat_title">NUMBER</div>
+      </div>
+    </div>
+
+    <div class="row secondary_row sec-st">
+      <div class="col-4">
+        <p><span class="font-weight-bold"><%= link_to @player.team.team_name.upcase, team_path(@player.team_id) %></span></p>
+      </div>
+      <div class="col-4">
+        <p><span class="lft_line">&#124;</span><span class="font-weight-bold">
+        <% case @player.position
+        when 1 %><td class="alg_left">GOALKEEPER</td>
+        <% when 2 %><td class="alg_left">DEFENDER</td>
+        <% when 3 %><td class="alg_left">MIDFIELDER</td>
+        <% when 4 %><td class="alg_left">FORWARD</td>
+        <% end %>
+        </span><span class="rgh_line">&#124;</span></p>
+      </div>
+      <div class="col-4">
+        <p><span class="font-weight-bold"><%= number_with_delimiter(@player.minutes, delimiter: " ") %></span>
+        MINUTES</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row justify-content-center pl_data">
+
+  <div class="col-12 col-sm-6 col-md-4 show_table">
+    <p class="sts_title">OFFENSIVE</p>
+    <div class="show_table_row">
+      <span>Scored</span>
+      <span><%= @player.goals_scored %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Assists</span>
+      <span><%= @player.assists %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Chances Created</span>
+      <span><%= @player.big_chances_created %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Passes Success</span>
+      <span><%= @player.passes_success %>%</span>
+      </span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Offsides</span>
+      <span><%= @player.offside %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Dribbles</span>
+      <span><%= @player.dribbles %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Tackled</span>
+      <span><%= @player.tackled %></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 show_table">
+    <p class="sts_title">DEFFENSIVE</p>
+    <div class="show_table_row">
+      <span>Tackles</span>
+      <span><%= @player.tackles %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Recoveries</span>
+      <span><%= @player.recoveries %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span><abbr title="Clean Sheets">CS</abbr></span>
+      <span><%= @player.clean_sheets %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Conceded</span>
+      <span><%= @player.goals_conceded %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Saves</span>
+      <span><%= @player.saves %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Penalties Conceded</span>
+      <span><%= @player.penalties_conceded %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Penalties Saved</span>
+      <span><%= @player.penalties_saved %></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 show_table">
+    <p class="sts_title">BOOKING</p>
+
+    <div class="show_table_row">
+      <span>Fouls</span>
+      <span><%= @player.fouls %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Own Goals</span>
+      <span><%= @player.own_goals %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Yellow Cards</span>
+      <span><%= @player.yellow_cards %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Red Cards</span>
+      <span><%= @player.red_cards %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Penalties Against</span>
+      <span><%= @player.penalties_saved + @player.penalties_conceded %></span>
+    </div>
+
+    <div class="show_table_row">
+      <span>Errors leading to goal</span>
+      <span><%= @player.errors_leading_to_goal %></span>
+    </div>
+  </div>
+</div>

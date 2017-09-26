@@ -1,0 +1,147 @@
+<!-- OVERWIEV -->
+
+<div>
+  <table id="over_sp" class="sts_table players_table slimer">
+    <tr>
+      <th class="alg_left">Player</th>
+      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th><abbr title="Games Played">GP</abbr></th>
+      <th><abbr title="Minutes Played">MP</abbr></th>
+      <th><abbr title="Points">PTS</abbr></th>
+      <th><abbr title="Bonus Points">BP</abbr></th>
+      <th><abbr title="Points per Game">PPG</abbr></th>
+      <th><abbr title="In Dream Team">DT</abbr></th>
+      <th><abbr title="Influence">IN</abbr></th>
+    </tr>
+
+    <% @team.players.order(position: :asc, minutes: :desc).each do |player| %>
+      <tr>
+        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <% case player.position
+        when 1 %><td class="alg_left">GK</td>
+        <% when 2 %><td class="alg_left">DEF</td>
+        <% when 3 %><td class="alg_left">MID</td>
+        <% when 4 %><td class="alg_left">FWD</td>
+        <% end %>
+        <td>38</td>
+        <td><%= number_with_delimiter(player.minutes, delimiter: " ") %></td>
+        <td><%= player.total_points %></td>
+        <td><%= player.bonus %></td>
+        <td><%= player.points_per_game %></td>
+        <td><%= player.dreamteam_count %></td>
+        <td><%= number_with_delimiter(player.influence.to_i.round, delimiter: " ") %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- OFFENSIVE -->
+
+<div>
+  <table id="offe_sp" class="sts_table players_table slimer hidden">
+    <tr>
+      <th class="alg_left">Player</th>
+      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th><abbr title="Goals">G</abbr></th>
+      <th><abbr title="Assists">A</abbr></th>
+      <th><abbr title="Chances Created">CC</abbr></th>
+      <th><abbr title="Passes Success Rate">PSR</abbr></th>
+      <th><abbr title="Offsides">OFF</abbr></th>
+      <th><abbr title="Dribbles">DB</abbr></th>
+      <th><abbr title="Tackled">T</abbr></th>
+    </tr>
+
+    <% @team.players.order(goals_scored: :desc).each do |player| %>
+      <tr>
+        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <% case player.position
+        when 1 %><td class="alg_left">GK</td>
+        <% when 2 %><td class="alg_left">DEF</td>
+        <% when 3 %><td class="alg_left">MID</td>
+        <% when 4 %><td class="alg_left">FWD</td>
+        <% end %>
+        <td><%= player.goals_scored %></td>
+        <td><%= player.assists %></td>
+        <td><%= player.big_chances_created %></td>
+        <td><%= player.passes_success.to_i.round %>%</td>
+        <td><%= player.offside %></td>
+        <td><%= player.dribbles %></td>
+        <td><%= player.tackled %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- DEFFENSIVE -->
+
+<div>
+  <table id="deff_sp" class="sts_table players_table slimer hidden">
+    <tr>
+      <th class="alg_left">Player</th>
+      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th><abbr title="Tackles">TC</abbr></th>
+      <th><abbr title="Recoveries">RC</abbr></th>
+      <th><abbr title="Clearances, Blocks, Interceptions">CBI</abbr></th>
+      <th><abbr title="Clean Sheets">CS</abbr></th>
+      <th><abbr title="Saves">SV</abbr></th>
+      <th><abbr title="Penalties Conceded">PC</abbr></th>
+      <th><abbr title="Penalties Saved">PS</abbr></th>
+    </tr>
+
+    <% @team.players.order(clean_sheets: :desc).each do |player| %>
+      <tr>
+        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <% case player.position
+        when 1 %><td class="alg_left">GK</td>
+        <% when 2 %><td class="alg_left">DEF</td>
+        <% when 3 %><td class="alg_left">MID</td>
+        <% when 4 %><td class="alg_left">FWD</td>
+        <% end %>
+        <td><%= player.tackles %></td>
+        <td><%= player.recoveries %></td>
+        <td><%= player.clearances_blocks_interceptions %></td>
+        <td><%= player.clean_sheets %></td>
+        <td><%= player.saves %></td>
+        <td><%= player.penalties_conceded %></td>
+        <td><%= player.penalties_saved %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- BOOKING -->
+
+<div>
+  <table id="book_sp" class="sts_table players_table slimer hidden">
+    <tr>
+      <th class="alg_left">Player</th>
+      <th class="alg_left"><abbr title="Position">POS</abbr></th>
+      <th><abbr title="Own Goals">OG</abbr></th>
+      <th><abbr title="Fouls">FL</abbr></th>
+      <th><abbr title="Cards Overall">CO</abbr></th>
+      <th><abbr title="Yellow Cards">YC</abbr></th>
+      <th><abbr title="Red Cards">RC</abbr></th>
+      <th><abbr title="Errors leading to goal">EG</abbr></th>
+      <th><abbr title="Penalties Missed">PM</abbr></th>
+    </tr>
+
+    <% @team.players.order(yellow_cards: :desc, red_cards: :desc).each do |player| %>
+      <tr>
+        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <% case player.position
+        when 1 %><td class="alg_left">GK</td>
+        <% when 2 %><td class="alg_left">DEF</td>
+        <% when 3 %><td class="alg_left">MID</td>
+        <% when 4 %><td class="alg_left">FWD</td>
+        <% end %>
+        <td><%= player.own_goals %></td>
+        <td><%= player.fouls %></td>
+        <td><%= player.yellow_cards + player.red_cards %></td>
+        <td><%= player.yellow_cards %></td>
+        <td><%= player.red_cards %></td>
+        <td><%= player.errors_leading_to_goal %></td>
+        <td><%= player.penalties_missed %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

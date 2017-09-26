@@ -1,52 +1,65 @@
-<h1><%= @team.team_name %></h1>
+<h1 class="bigger_h1"><%= @team.team_name %></h1>
 
 <div class="row main_t_stats">
 
-  <div class="col-3">
+  <div class="img_space col-sm-4">
     <%= image_tag('shirt.png', alt: "Team Shirt", class: "shirt") %>
   </div>
 
-  <div class="col-9">
+  <div class="col-12 col-sm-8">
 
-    <div class="d-inline"><%= @team.points %></div>
-    <div>Points</div>
+    <div class="row primary_row">
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @team.points %></div>
+        <div class="stat_title">POINTS</div>
+      </div>
 
-    <div class="d-inline"><%= @team.won %></div>
-    <div>Won</div>
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @team.won %></div>
+        <div class="stat_title">WON</div>
+      </div>
 
-    <div class="d-inline"><%= @team.draws %></div>
-    <div>Draws</div>
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @team.draws %></div>
+        <div class="stat_title">DRAW</div>
+      </div>
 
-    <div class="d-inline"><%= @team.lost %></div>
-    <div>Lost</div>
-
-    <div class="one_stat">
-      <div>Matches</div>
-      <div><%= @team.games_played %></div>
+      <div class="col-3 circle_cont">
+        <div class="stat_circle prim-st-light"><%= @team.lost %></div>
+        <div class="stat_title">LOST</div>
+      </div>
     </div>
-    <div class="one_stat">
-      <div>Scored</div>
-      <div><%= @team.goals_scored %></div>
+
+    <div class="row secondary_row sec-st">
+      <div class="col-4">
+        <p><span class="font-weight-bold"><%= @team.games_played %></span>
+        MATCHES</p>
+      </div>
+      <div class="col-4">
+        <p><span class="lft_line">&#124;</span><span class="font-weight-bold"><%= @team.goals_scored %></span>
+        SCORED<span class="rgh_line">&#124;</span></p>
+      </div>
+      <div class="col-4">
+        <p><span class="font-weight-bold"><%= @team.goals_conceded %></span>
+        CONCEDED</p>
+      </div>
     </div>
-    <div class="one_stat">
-      <div>Conceded</div>
-      <div><%= @team.goals_conceded %></div>
-    </div>
+
   </div>
 
 </div>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center pl_data">
 
-  <div class="col-3 show_table">
-    <p class="sts_title">Offensive</p>
+  <div class="col-12 col-sm-6 col-md-4 show_table">
+    <p class="sts_title">OFFENSIVE</p>
     <div class="show_table_row">
       <span>Scored</span>
       <span><%= @team.goals_scored %></span>
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Scored per Game">SPG</abbr></span>
+      <span>Scored per Game</span>
       <span>
         <%= number_with_precision(@team.goals_scored / @team.games_played, :precision => 2, :delimiter => '.') %>
       </span>
@@ -58,13 +71,13 @@
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Penalties Scored">PS</abbr></span>
+      <span>Penalties Scored</span>
       <span>ND</span>
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Passes Success Rate">PSR</abbr></span>
-      <span><%= @team.passes_success %></span>
+      <span>Passes Success</span>
+      <span><%= @team.passes_success %>%</span>
     </div>
 
     <div class="show_table_row">
@@ -83,15 +96,15 @@
     </div>
   </div>
 
-  <div class="col-3 show_table">
-    <p class="sts_title">Deffensive</p>
+  <div class="col-12 col-sm-6 col-md-4 show_table">
+    <p class="sts_title">DEFFENSIVE</p>
     <div class="show_table_row">
       <span>Conceded</span>
       <span><%= @team.goals_conceded %></span>
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Conceded per Game">CPG</abbr></span>
+      <span>Conceded per Game</span>
       <span><%= @team.goals_conceded / @team.games_played %></span>
     </div>
 
@@ -106,11 +119,6 @@
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Clearances, block, interceptions">CBI</abbr></span>
-      <span><%= @team.clearances_blocks_interceptions %></span>
-    </div>
-
-    <div class="show_table_row">
       <span><abbr title="Clean Sheets">CS</abbr></span>
       <span><%= @team.clean_sheets %></span>
     </div>
@@ -121,18 +129,18 @@
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Penalties Conceded">PS</abbr></span>
+      <span>Penalties Conceded</span>
       <span><%= @team.penalties_conceded %></span>
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Penalties Saved">PS</abbr></span>
+      <span>Penalties Saved</span>
       <span><%= @team.penalties_saved %></span>
     </div>
   </div>
 
-  <div class="col-3 show_table">
-    <p class="sts_title">Booking</p>
+  <div class="col-12 col-sm-6 col-md-4 show_table">
+    <p class="sts_title">BOOKING</p>
 
     <div class="show_table_row">
       <span>Fouls</span>
@@ -155,12 +163,12 @@
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Penalties Against">PA</abbr></span>
+      <span>Penalties Against</span>
       <span><%= @team.penalties_saved + @team.penalties_conceded %></span>
     </div>
 
     <div class="show_table_row">
-      <span><abbr title="Errors leading to goal">EG</abbr></span>
+      <span>Errors leading to goal</span>
       <span><%= @team.errors_leading_to_goal %></span>
     </div>
   </div>

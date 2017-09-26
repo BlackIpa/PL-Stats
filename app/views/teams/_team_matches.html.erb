@@ -1,5 +1,5 @@
 <h2>Latest games</h2>
-<table class="table sts_table mtch_table">
+<table class="sts_table mtch_table">
   <tr>
     <th>Round</th>
     <th>Date</th>
@@ -11,7 +11,11 @@
     <tr>
       <td><%= match.round %></td>
       <td><%= match.kick_off.slice(0,6) %></td>
-      <td class="alg_left"><%= match.team_name %>-<%= match.opp_team_name %></td>
+      <td class="alg_left">
+        <%= link_to match.team_name, team_path(match.team_id) %>
+        -
+        <%= link_to match.opp_team_name, team_path(match.opp_team_id) %>
+      </td>
       <td><%= match.team_h_score %>:<%= match.team_a_score %></td>
     </tr>
   <% end %>
