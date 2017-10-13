@@ -3,8 +3,8 @@
 <div>
   <table id="over_sp" class="sts_table players_table slimer">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Games Played">GP</abbr></th>
       <th><abbr title="Minutes Played">MP</abbr></th>
       <th><abbr title="Points">PTS</abbr></th>
@@ -16,12 +16,12 @@
 
     <% @team.players.order(position: :asc, minutes: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <td class="text-left"><%=  link_to player.full_name, player_path(player) %></td>
         <% case player.position
-        when 1 %><td class="alg_left">GK</td>
-        <% when 2 %><td class="alg_left">DEF</td>
-        <% when 3 %><td class="alg_left">MID</td>
-        <% when 4 %><td class="alg_left">FWD</td>
+        when 1 %><td class="text-left">GK</td>
+        <% when 2 %><td class="text-left">DEF</td>
+        <% when 3 %><td class="text-left">MID</td>
+        <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td>38</td>
         <td><%= number_with_delimiter(player.minutes, delimiter: " ") %></td>
@@ -38,10 +38,10 @@
 <!-- OFFENSIVE -->
 
 <div>
-  <table id="offe_sp" class="sts_table players_table slimer hidden">
+  <table id="offe_sp" class="sts_table players_table slimer collapse">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Goals">G</abbr></th>
       <th><abbr title="Assists">A</abbr></th>
       <th><abbr title="Chances Created">CC</abbr></th>
@@ -53,12 +53,12 @@
 
     <% @team.players.order(goals_scored: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <td class="text-left"><%=  link_to player.full_name, player_path(player) %></td>
         <% case player.position
-        when 1 %><td class="alg_left">GK</td>
-        <% when 2 %><td class="alg_left">DEF</td>
-        <% when 3 %><td class="alg_left">MID</td>
-        <% when 4 %><td class="alg_left">FWD</td>
+        when 1 %><td class="text-left">GK</td>
+        <% when 2 %><td class="text-left">DEF</td>
+        <% when 3 %><td class="text-left">MID</td>
+        <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.goals_scored %></td>
         <td><%= player.assists %></td>
@@ -75,10 +75,10 @@
 <!-- DEFFENSIVE -->
 
 <div>
-  <table id="deff_sp" class="sts_table players_table slimer hidden">
+  <table id="deff_sp" class="sts_table players_table slimer collapse">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Tackles">TC</abbr></th>
       <th><abbr title="Recoveries">RC</abbr></th>
       <th><abbr title="Clearances, Blocks, Interceptions">CBI</abbr></th>
@@ -90,12 +90,12 @@
 
     <% @team.players.order(clean_sheets: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <td class="text-left"><%=  link_to player.full_name, player_path(player) %></td>
         <% case player.position
-        when 1 %><td class="alg_left">GK</td>
-        <% when 2 %><td class="alg_left">DEF</td>
-        <% when 3 %><td class="alg_left">MID</td>
-        <% when 4 %><td class="alg_left">FWD</td>
+        when 1 %><td class="text-left">GK</td>
+        <% when 2 %><td class="text-left">DEF</td>
+        <% when 3 %><td class="text-left">MID</td>
+        <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.tackles %></td>
         <td><%= player.recoveries %></td>
@@ -112,10 +112,10 @@
 <!-- BOOKING -->
 
 <div>
-  <table id="book_sp" class="sts_table players_table slimer hidden">
+  <table id="book_sp" class="sts_table players_table slimer collapse">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left"><abbr title="Position">POS</abbr></th>
+      <th>Player</th>
+      <th><abbr title="Position">POS</abbr></th>
       <th><abbr title="Own Goals">OG</abbr></th>
       <th><abbr title="Fouls">FL</abbr></th>
       <th><abbr title="Cards Overall">CO</abbr></th>
@@ -127,12 +127,12 @@
 
     <% @team.players.order(yellow_cards: :desc, red_cards: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%=  link_to player.full_name, player_path(player) %></td>
+        <td class="text-left"><%=  link_to player.full_name, player_path(player) %></td>
         <% case player.position
-        when 1 %><td class="alg_left">GK</td>
-        <% when 2 %><td class="alg_left">DEF</td>
-        <% when 3 %><td class="alg_left">MID</td>
-        <% when 4 %><td class="alg_left">FWD</td>
+        when 1 %><td class="text-left">GK</td>
+        <% when 2 %><td class="text-left">DEF</td>
+        <% when 3 %><td class="text-left">MID</td>
+        <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.own_goals %></td>
         <td><%= player.fouls %></td>

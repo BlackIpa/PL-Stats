@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'homes#index', as: 'home'
+  root to: 'homes#index'
 
   resources :teams do
   	resources :players

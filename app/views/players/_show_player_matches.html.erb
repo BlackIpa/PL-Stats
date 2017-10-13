@@ -36,7 +36,7 @@
 
 <!-- OFFENISVE -->
 <div>
-  <table id="offe_m" class="sts_table team_matches hidden">
+  <table id="offe_m" class="sts_table team_matches collapse">
     <tr>
       <th><abbr title="Kick Off">KO</abbr></th>
       <th><abbr title="Home">H</abbr></th>
@@ -64,7 +64,11 @@
         <td><%= player_match.goals_scored %></td>
         <td><%= player_match.assists %></td>
         <td><%= player_match.big_chances_created %></td>
-        <td><%= player_match.passes_success.round %>%</td>
+        <% if player_match.minutes == 0 %>
+          <td>0%</td>
+        <% else %>
+          <td><%= player_match.passes_success.round %>%</td>
+        <% end %>
       </tr>
     <% end %>
   </table>
@@ -72,7 +76,7 @@
 
 <!-- DEFFENSIVE -->
 <div>
-  <table id="deff_m" class="sts_table team_matches hidden">
+  <table id="deff_m" class="sts_table team_matches collapse">
     <tr>
       <th><abbr title="Kick Off">KO</abbr></th>
       <th><abbr title="Home">H</abbr></th>
@@ -108,7 +112,7 @@
 
 <!-- BOOKING -->
 <div>
-  <table id="book_m" class="sts_table team_matches hidden">
+  <table id="book_m" class="sts_table team_matches collapse">
     <tr>
       <th><abbr title="Kick Off">KO</abbr></th>
       <th><abbr title="Home">H</abbr></th>

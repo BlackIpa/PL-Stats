@@ -3,7 +3,7 @@
   <tr>
     <th>Round</th>
     <th>Date</th>
-    <th class="alg_left">VS</th>
+    <th>VS</th>
     <th>Result</th>
   </tr>
 
@@ -11,7 +11,7 @@
     <tr>
       <td><%= match.round %></td>
       <td><%= match.kick_off.slice(0,6) %></td>
-      <td class="alg_left">
+      <td class="text-left">
         <%= link_to match.team_name, team_path(match.team_id) %>
         -
         <%= link_to match.opp_team_name, team_path(match.opp_team_id) %>

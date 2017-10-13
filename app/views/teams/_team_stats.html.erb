@@ -2,7 +2,7 @@
 <div>
   <table id="over_t" class="sts_table team_table">
     <tr>
-      <th class="alg_left">Team</th>
+      <th>Team</th>
       <th><abbr title="Points">PTS</abbr></th>
       <th><abbr title="Matches Played">P</abbr></th>
       <th><abbr title="Won">W</abbr></th>
@@ -16,7 +16,7 @@
 
     <% teams.order(points: :desc).each do |team| %>
       <tr>
-        <td class="alg_left"><%= link_to team.team_name, team_path(team) %></td>
+        <td class="text-left"><%= link_to team.team_name, team %></td>
         <td><%= team.points %></td>
         <td><%= team.games_played %></td>
         <td><%= team.won %></td>
@@ -33,9 +33,9 @@
 
 <!-- OFFENISVE -->
 <div>
-  <table id="offe_t" class="sts_table team_table hidden">
+  <table id="offe_t" class="sts_table team_table collapse">
     <tr>
-      <th class="alg_left">Team</th>
+      <th>Team</th>
       <th><abbr title="Points">PTS</abbr></th>
       <th><abbr title="Goals For">GF</abbr></th>
       <th><abbr title="Goals per Game">GPG</abbr></th>
@@ -48,7 +48,7 @@
 
     <% teams.order(points: :desc).each do |team| %>
       <tr>
-        <td class="alg_left"><%= link_to team.team_name, team_path(team) %></td>
+        <td class="text-left"><%= link_to team.team_name, team %></td>
         <td><%= team.points %></td>
         <td><%= team.goals_scored %></td>
         <td><%= team.goals_scored / team.games_played %></td>
@@ -64,9 +64,9 @@
 
 <!-- DEFFENSIVE -->
 <div>
-  <table id="deff_t" class="sts_table team_table hidden">
+  <table id="deff_t" class="sts_table team_table collapse">
     <tr>
-      <th class="alg_left">Team</th>
+      <th>Team</th>
       <th><abbr title="Points">PTS</abbr></th>
       <th><abbr title="Goals Against">GA</abbr></th>
       <th><abbr title="Goals Against per Game">GPG</abbr></th>
@@ -79,7 +79,7 @@
 
     <% teams.order(points: :desc).each do |team| %>
       <tr>
-        <td class="alg_left"><%= link_to team.team_name, team_path(team) %></td>
+        <td class="text-left"><%= link_to team.team_name, team %></td>
         <td><%= team.points %></td>
         <td><%= team.goals_conceded %></td>
         <td><%= team.goals_conceded / team.games_played %></td>
@@ -95,9 +95,9 @@
 
 <!-- BOOKING -->
 <div>
-  <table id="book_t" class="sts_table team_table hidden">
+  <table id="book_t" class="sts_table team_table collapse">
     <tr>
-      <th class="alg_left">Team</th>
+      <th>Team</th>
       <th><abbr title="Points">PTS</abbr></th>
       <th><abbr title="Own Goals">OG</abbr></th>
       <th><abbr title="Fouls">FL</abbr></th>
@@ -110,7 +110,7 @@
 
     <% teams.order(points: :desc).each do |team| %>
       <tr>
-        <td class="alg_left"><%= link_to team.team_name, team_path(team) %></td>
+        <td class="text-left"><%= link_to team.team_name, team %></td>
         <td><%= team.points %></td>
         <td><%= team.own_goals %></td>
         <td><%= team.fouls %></td>

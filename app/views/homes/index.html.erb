@@ -2,27 +2,47 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <% @teams.each do |t| %>
+    <% @teams.each_with_index do |t, index| %>
 
       <div class="col-md-4 show_table">
         <div class="home_title">
           <span><%= t[:team_name] %></span>
         </div>
-        <p class="home_data"><%= "Won " + t[:won].to_s + " out of " + t[:games_played].to_s + " games" %></p>
+        <p class="text-center">
+          <% case index
+             when 0 %><%= "Won " + t[:won].to_s + " out of " + t[:games_played].to_s + " games" %>
+          <% when 1 %><%= "Scored " + t[:goals_scored].to_s + " and conceded " + t[:goals_conceded].to_s + " goals" %>
+          <% when 2 %><%= "Had " + t[:passes_success].to_s + "% of successful passes" %>
+          <% end %>
+        </p>
       </div>
 
     <% end %>
   </div>
 
   <div class="row justify-content-center">
-    <% @players.each do |p| %>
+    <% @players.each_with_index do |p, index| %>
 
       <div class="col-md-4 show_table">
         <div class="home_title">
           <span><%= p[:full_name] %></span><br>
+          <span class="home_subtitle">
+            <% case p[:position]
+            when 1 %><td class="text-left">Goalkeeper</td>
+            <% when 2 %><td class="text-left">Defender</td>
+            <% when 3 %><td class="text-left">Midfielder</td>
+            <% when 4 %><td class="text-left">Forward</td>
+          <% end %>
+          </span><br>
           <span class="home_subtitle"><%= p[:team_name] %></span>
         </div>
-        <p class="home_data"><%= "Gathered " + p[:total_points].to_s + " points" %></p>
+        <p class="text-center">
+          <% case index
+             when 0 %><%= "Gathered " + p[:total_points].to_s + " points" %>
+          <% when 1 %><%= "Played " + number_with_delimiter(p[:minutes], delimiter: " ").to_s + " minutes" %>
+          <% when 2 %><%= "Scored " + p[:goals_scored].to_s + " goals" %>
+          <% end %>
+        </p>
       </div>
 
     <% end %>

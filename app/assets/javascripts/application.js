@@ -21,50 +21,50 @@
 
 $(document).ready( function(){
   $("#t_over").click(function(){
-    $('.team_table').addClass("hidden");
-    $('#over_t').removeClass("hidden");
+    $('.team_table').addClass("collapse");
+    $('#over_t').removeClass("collapse");
     $('.t_sts_btn').removeClass("sts_active");
     $('#t_over').addClass("sts_active");
   });
   $("#t_offe").click(function(){
-    $('.team_table').addClass("hidden");
-    $('#offe_t').removeClass("hidden");
+    $('.team_table').addClass("collapse");
+    $('#offe_t').removeClass("collapse");
     $('.t_sts_btn').removeClass("sts_active");
     $('#t_offe').addClass("sts_active");
   });
   $("#t_deff").click(function(){
-    $('.team_table').addClass("hidden");
-    $('#deff_t').removeClass("hidden");
+    $('.team_table').addClass("collapse");
+    $('#deff_t').removeClass("collapse");
     $('.t_sts_btn').removeClass("sts_active");
     $('#t_deff').addClass("sts_active");
   });
   $("#t_book").click(function(){
-    $('.team_table').addClass("hidden");
-    $('#book_t').removeClass("hidden");
+    $('.team_table').addClass("collapse");
+    $('#book_t').removeClass("collapse");
     $('.t_sts_btn').removeClass("sts_active");
     $('#t_book').addClass("sts_active");
   });
   $("#p_over").click(function(){
-    $('.pl_table').addClass("hidden");
-    $('#over_p').removeClass("hidden");
+    $('.pl_table').addClass("collapse");
+    $('#over_p').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#p_over').addClass("sts_active");
   });
   $("#p_offe").click(function(){
-    $('.pl_table').addClass("hidden");
-    $('#offe_p').removeClass("hidden");
+    $('.pl_table').addClass("collapse");
+    $('#offe_p').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#p_offe').addClass("sts_active");
   });
   $("#p_deff").click(function(){
-    $('.pl_table').addClass("hidden");
-    $('#deff_p').removeClass("hidden");
+    $('.pl_table').addClass("collapse");
+    $('#deff_p').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#p_deff').addClass("sts_active");
   });
   $("#p_book").click(function(){
-    $('.pl_table').addClass("hidden");
-    $('#book_p').removeClass("hidden");
+    $('.pl_table').addClass("collapse");
+    $('#book_p').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#p_book').addClass("sts_active");
   });
@@ -74,26 +74,26 @@ $(document).ready( function(){
 
 $(document).ready( function(){
   $("#sp_over").click(function(){
-    $('.players_table').addClass("hidden");
-    $('#over_sp').removeClass("hidden");
+    $('.players_table').addClass("collapse");
+    $('#over_sp').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#sp_over').addClass("sts_active");
   });
   $("#sp_offe").click(function(){
-    $('.players_table').addClass("hidden");
-    $('#offe_sp').removeClass("hidden");
+    $('.players_table').addClass("collapse");
+    $('#offe_sp').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#sp_offe').addClass("sts_active");
   });
   $("#sp_deff").click(function(){
-    $('.players_table').addClass("hidden");
-    $('#deff_sp').removeClass("hidden");
+    $('.players_table').addClass("collapse");
+    $('#deff_sp').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#sp_deff').addClass("sts_active");
   });
   $("#sp_book").click(function(){
-    $('.players_table').addClass("hidden");
-    $('#book_sp').removeClass("hidden");
+    $('.players_table').addClass("collapse");
+    $('#book_sp').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#sp_book').addClass("sts_active");
   });
@@ -126,26 +126,26 @@ $(window).on("load resize", function(e) {
 
 $(document).ready( function(){
   $("#pl_over").click(function(){
-    $('.all_players_table').addClass("hidden");
-    $('#over_pl').removeClass("hidden");
+    $('.all_players_table').addClass("collapse");
+    $('#over_pl').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#pl_over').addClass("sts_active");
   });
   $("#pl_offe").click(function(){
-    $('.all_players_table').addClass("hidden");
-    $('#offe_pl').removeClass("hidden");
+    $('.all_players_table').addClass("collapse");
+    $('#offe_pl').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#pl_offe').addClass("sts_active");
   });
   $("#pl_deff").click(function(){
-    $('.all_players_table').addClass("hidden");
-    $('#deff_pl').removeClass("hidden");
+    $('.all_players_table').addClass("collapse");
+    $('#deff_pl').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#pl_deff').addClass("sts_active");
   });
   $("#pl_book").click(function(){
-    $('.all_players_table').addClass("hidden");
-    $('#book_pl').removeClass("hidden");
+    $('.all_players_table').addClass("collapse");
+    $('#book_pl').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#pl_book').addClass("sts_active");
   });
@@ -153,12 +153,12 @@ $(document).ready( function(){
 
 $(document).ready( function(){
   if ($(window).width() < 515) {
-    $('.shortn').removeClass("hidden");
-    $('.longn').addClass("hidden")
+    $('.shortn').removeClass("collapse");
+    $('.longn').addClass("collapse")
   }
   else {
-    $('.shortn').addClass("hidden")
-    $('.longn').removeClass("hidden");
+    $('.shortn').addClass("collapse")
+    $('.longn').removeClass("collapse");
   };
 });
 
@@ -166,26 +166,26 @@ $(document).ready( function(){
 
 $(document).ready( function(){
   $("#m_over").click(function(){
-    $('.team_matches').addClass("hidden");
-    $('#over_m').removeClass("hidden");
+    $('.team_matches').addClass("collapse");
+    $('#over_m').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#m_over').addClass("sts_active");
   });
   $("#m_offe").click(function(){
-    $('.team_matches').addClass("hidden");
-    $('#offe_m').removeClass("hidden");
+    $('.team_matches').addClass("collapse");
+    $('#offe_m').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#m_offe').addClass("sts_active");
   });
   $("#m_deff").click(function(){
-    $('.team_matches').addClass("hidden");
-    $('#deff_m').removeClass("hidden");
+    $('.team_matches').addClass("collapse");
+    $('#deff_m').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#m_deff').addClass("sts_active");
   });
   $("#m_book").click(function(){
-    $('.team_matches').addClass("hidden");
-    $('#book_m').removeClass("hidden");
+    $('.team_matches').addClass("collapse");
+    $('#book_m').removeClass("collapse");
     $('.p_sts_btn').removeClass("sts_active");
     $('#m_book').addClass("sts_active");
   });

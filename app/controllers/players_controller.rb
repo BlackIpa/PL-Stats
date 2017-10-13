@@ -2,8 +2,14 @@ class PlayersController < ApplicationController
 
   def index
     @teams = Team.all
-  	@players = Player.all.limit(20)
     @player_matches = PlayerMatch.all.limit(20)
+    @players = Player.all
+    if params[:search]
+      @players = Player.search(params[:search]).order("second_name DESC")
+    else
+      @players = Player.all.limit(20)
+    end
+
   end
 
   def show
@@ -13,9 +19,5 @@ class PlayersController < ApplicationController
   def players_stats
     @teams = Team.all
     @players = Player.all.limit(20)
-    respond_to do |format|
-      format.js
-      format.html
-    end
   end
 end

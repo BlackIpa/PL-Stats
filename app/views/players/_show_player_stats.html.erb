@@ -1,4 +1,4 @@
-<h1 class="bigger_h1"><%= @player.full_name %></h1>
+<h1><%= @player.full_name %></h1>
 
 <div class="row main_t_stats">
 
@@ -37,10 +37,10 @@
       <div class="col-4">
         <p><span class="lft_line">&#124;</span><span class="font-weight-bold">
         <% case @player.position
-        when 1 %><td class="alg_left">GOALKEEPER</td>
-        <% when 2 %><td class="alg_left">DEFENDER</td>
-        <% when 3 %><td class="alg_left">MIDFIELDER</td>
-        <% when 4 %><td class="alg_left">FORWARD</td>
+        when 1 %><td class="text-left">GOALKEEPER</td>
+        <% when 2 %><td class="text-left">DEFENDER</td>
+        <% when 3 %><td class="text-left">MIDFIELDER</td>
+        <% when 4 %><td class="text-left">FORWARD</td>
         <% end %>
         </span><span class="rgh_line">&#124;</span></p>
       </div>

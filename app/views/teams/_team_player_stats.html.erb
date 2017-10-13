@@ -3,22 +3,22 @@
 <div>
   <table id="over_p" class="sts_table pl_table">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left">Team</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th>Team</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Points">PTS</abbr></th>
       <th><abbr title="Minutes Played">MP</abbr></th>
     </tr>
 
     <% players.order(total_points: :desc, minutes: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%= link_to player.full_name, player_path(player) %></td>
-        <td class="alg_left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
+        <td class="text-left"><%= link_to player.full_name, player %></td>
+        <td class="text-left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
         <% case player.position
-          when 1 %><td class="alg_left">GK</td>
-          <% when 2 %><td class="alg_left">DEF</td>
-          <% when 3 %><td class="alg_left">MID</td>
-          <% when 4 %><td class="alg_left">FWD</td>
+          when 1 %><td class="text-left">GK</td>
+          <% when 2 %><td class="text-left">DEF</td>
+          <% when 3 %><td class="text-left">MID</td>
+          <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.total_points %></td>
         <td><%= player.minutes %></td>
@@ -30,24 +30,24 @@
 <!-- OFFENSIVE -->
 
 <div>
-  <table id="offe_p" class="sts_table pl_table hidden">
+  <table id="offe_p" class="sts_table pl_table collapse">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left">Team</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th>Team</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Goals">G</abbr></th>
       <th><abbr title="Assists">A</abbr></th>
     </tr>
 
     <% players.order(goals_scored: :desc, assists: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%= link_to player.full_name, player_path(player) %></td>
-        <td class="alg_left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
+        <td class="text-left"><%= link_to player.full_name, player %></td>
+        <td class="text-left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
         <% case player.position
-          when 1 %><td class="alg_left">GK</td>
-          <% when 2 %><td class="alg_left">DEF</td>
-          <% when 3 %><td class="alg_left">MID</td>
-          <% when 4 %><td class="alg_left">FWD</td>
+          when 1 %><td class="text-left">GK</td>
+          <% when 2 %><td class="text-left">DEF</td>
+          <% when 3 %><td class="text-left">MID</td>
+          <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.goals_scored %></td>
         <td><%= player.assists %></td>
@@ -59,24 +59,24 @@
 <!-- DEFFENSIVE -->
 
 <div>
-  <table id="deff_p" class="sts_table pl_table hidden">
+  <table id="deff_p" class="sts_table pl_table collapse">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left">Team</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th>Team</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Clean Sheets">CS</abbr></th>
       <th><abbr title="Tackles">T</abbr></th>
     </tr>
 
     <% players.order(clean_sheets: :desc, tackles: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%= link_to player.full_name, player_path(player) %></td>
-        <td class="alg_left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
+        <td class="text-left"><%= link_to player.full_name, player %></td>
+        <td class="text-left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
         <% case player.position
-          when 1 %><td class="alg_left">GK</td>
-          <% when 2 %><td class="alg_left">DEF</td>
-          <% when 3 %><td class="alg_left">MID</td>
-          <% when 4 %><td class="alg_left">FWD</td>
+          when 1 %><td class="text-left">GK</td>
+          <% when 2 %><td class="text-left">DEF</td>
+          <% when 3 %><td class="text-left">MID</td>
+          <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.clean_sheets %></td>
         <td><%= player.tackles %></td>
@@ -88,24 +88,24 @@
 <!-- BOOKING -->
 
 <div>
-  <table id="book_p" class="sts_table pl_table hidden">
+  <table id="book_p" class="sts_table pl_table collapse">
     <tr>
-      <th class="alg_left">Player</th>
-      <th class="alg_left">Team</th>
-      <th class="alg_left"><abbr title="Position">P</abbr></th>
+      <th>Player</th>
+      <th>Team</th>
+      <th><abbr title="Position">P</abbr></th>
       <th><abbr title="Yellow Cards">YC</abbr></th>
       <th><abbr title="Red Cards">RC</abbr></th>
     </tr>
 
     <% players.order(red_cards: :desc, yellow_cards: :desc).each do |player| %>
       <tr>
-        <td class="alg_left"><%= link_to player.full_name, player_path(player) %></td>
-        <td class="alg_left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
+        <td class="text-left"><%= link_to player.full_name, player %></td>
+        <td class="text-left"><%= link_to player.team.team_name, team_path(player.team_id) %></td>
         <% case player.position
-          when 1 %><td class="alg_left">GK</td>
-          <% when 2 %><td class="alg_left">DEF</td>
-          <% when 3 %><td class="alg_left">MID</td>
-          <% when 4 %><td class="alg_left">FWD</td>
+          when 1 %><td class="text-left">GK</td>
+          <% when 2 %><td class="text-left">DEF</td>
+          <% when 3 %><td class="text-left">MID</td>
+          <% when 4 %><td class="text-left">FWD</td>
         <% end %>
         <td><%= player.yellow_cards %></td>
         <td><%= player.red_cards %></td>

@@ -23,22 +23,9 @@ table, th, td {
   text-align: center;
 }
 
-h1 {
-  font-weight: bold;
-}
-
 a, a:hover {
   text-decoration: none;
   color: black;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.hidden {
-  display: none;
 }
 
 /* Navbar styles */
@@ -56,10 +43,6 @@ a {
   width: 50px;
 }
 
-.bigger_h1 {
-  font-size: 4rem;
-}
-
 /* Home styles */
 
 .home_title {
@@ -73,20 +56,17 @@ a {
   font-size: 1.5rem;
 }
 
-.home_title span:nth-child(3) {
+.home_subtitle {
   font-weight: normal;
   font-size: 0.8rem;
   color: #6A9A9E;
-}
-
-.home_data {
-  text-align: center;
 }
 
 /* Team index and tables styles */
 
 .diff_stats_links {
   margin-top: 3rem;
+  margin-bottom: 0.75rem;
 }
 
 .sts_btn {
@@ -95,7 +75,6 @@ a {
   width: 105px;
   background: #F5F5F5;
   color: #6A9A9E;
-  font-style: bold;
   font-size: 0.9rem;
 }
 
@@ -107,10 +86,6 @@ a {
 .sts_active, .sts_btn:hover, .sts_btn:hover {
   background: #6A9A9E;
   color: #F5F5F5;
-}
-
-.diff_stats_links {
-  margin-bottom: 0.75rem;
 }
 
 .sts_table {
@@ -139,10 +114,6 @@ a {
 
 .sts_table a:hover {
   color: #6A9A9E;
-}
-
-.alg_left {
-    text-align: left;
 }
 
 .sts_table tr:hover:not(:first-child) {
