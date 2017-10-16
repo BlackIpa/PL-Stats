@@ -2,11 +2,11 @@
 
 <table class="sts_table team_matches">
   <tr>
-    <th>Rd</th>
-    <th>Date</th>
-    <th>Home</th>
-    <th>Away</th>
-    <th>Rs</th>
+    <th><abbr title="Round">RD</abbr></th>
+    <th><abbr title="Date">D</abbr></th>
+    <th><abbr title="Home">H</abbr></th>
+    <th><abbr title="Away">A</abbr></th>
+    <th><abbr title="Result">RS</abbr></th>
   </tr>
 
   <% @team.matches.order(round: :desc).each do |match| %>

@@ -1,11 +1,12 @@
 <div class="row padding_adj">
-  <div class="col-4 p-sm-0 pl-2">
+  <div class="col-12 col-sm-4 p-sm-0 pl-2">
     <h1>Players</h1>
   </div>
 
-  <div class="col-8 p-sm-0 pr-2">
+  <div class="col-12 col-sm-8 p-sm-0 pl-2 pr-2">
     <%= form_tag(players_path, :method => "get", class: "form-inline my-0 search_form mt-1") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search for players", class: "form-control mr-0 search_form_inp" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search for players",
+        required: true, minlength: 3, maxlength: 20, class: "form-control mr-0 search_form_inp" %>
         <button class="btn pl-2 schr_btn" type="submit">
           <%= image_submit_tag('search.png', alt: "Search", class: "search_icon") %>
         </button>

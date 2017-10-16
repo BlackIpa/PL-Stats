@@ -1,4 +1,4 @@
-<h1><%= @player.full_name %></h1>
+<h1 class="bigger_h1"><%= @player.full_name %></h1>
 
 <div class="row main_t_stats">
 
@@ -6,7 +6,7 @@
     <%= image_tag('shirt.png', alt: "Team Shirt", class: "shirt") %>
   </div>
 
-  <div class="col-12 col-sm-8">
+  <div class="col-12 col-sm-8 padding_0">
 
     <div class="row primary_row">
       <div class="col-3 circle_cont">
@@ -32,21 +32,20 @@
 
     <div class="row secondary_row sec-st">
       <div class="col-4">
-        <p><span class="font-weight-bold"><%= link_to @player.team.team_name.upcase, team_path(@player.team_id) %></span></p>
+        <p><%= link_to @player.team.short_name.upcase, team_path(@player.team_id) %></p>
       </div>
       <div class="col-4">
-        <p><span class="lft_line">&#124;</span><span class="font-weight-bold">
+        <p><span class="lft_line">&#124;</span>
         <% case @player.position
         when 1 %><td class="text-left">GOALKEEPER</td>
         <% when 2 %><td class="text-left">DEFENDER</td>
         <% when 3 %><td class="text-left">MIDFIELDER</td>
         <% when 4 %><td class="text-left">FORWARD</td>
         <% end %>
-        </span><span class="rgh_line">&#124;</span></p>
+        <span class="rgh_line">&#124;</span></p>
       </div>
       <div class="col-4">
-        <p><span class="font-weight-bold"><%= number_with_delimiter(@player.minutes, delimiter: " ") %></span>
-        MINUTES</p>
+        <p><%= number_with_delimiter(@player.minutes, delimiter: " ") %> MINUTES</p>
       </div>
     </div>
 
