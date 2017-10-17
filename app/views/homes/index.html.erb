@@ -6,7 +6,7 @@
 
       <div class="col-md-4 show_table">
         <div class="home_title">
-          <span><%= t[:team_name] %></span>
+          <span><%= link_to t[:team_name], t %></span>
         </div>
         <p class="text-center">
           <% case index
@@ -25,7 +25,7 @@
 
       <div class="col-md-4 show_table">
         <div class="home_title">
-          <span><%= p[:full_name] %></span><br>
+          <span><%= link_to p[:full_name], p %></span><br>
           <span class="home_subtitle">
             <% case p[:position]
             when 1 %><td class="text-left">Goalkeeper</td>
