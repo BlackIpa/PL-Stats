@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password:
-  host: localhost
+  host: 127.0.0.1
   socket: /tmp/mysql.sock
 
 development:
@@ -49,7 +49,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: stats_production
-  username: stats
-  password: <%= ENV['STATS_DATABASE_PASSWORD'] %>
+  # <<: *default
+  # database: stats_production
+  # username: stats
+  # password: <%= ENV['STATS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['mysql2://b40ff5e5f94c44:f21f0550@us-cdbr-iron-east-05.cleardb.net/heroku_d3f4b59c6af887d?reconnect=true'] %>
